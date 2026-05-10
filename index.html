@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ボートレース予想サイト｜無料予想・的中実績公開中</title>
+  <meta name="description" content="競艇（ボートレース）の無料予想を毎日公開。的中実績・回収率もすべて公開。初心者向け基礎知識も充実。舟券購入の参考にどうぞ。">
+  <meta name="keywords" content="競艇,ボートレース,予想,無料予想,的中実績,舟券,3連単">
+  <link rel="canonical" href="https://YOUR-USERNAME.github.io/boatrace-yosou/">
+
+  <!-- OGP -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="ボートレース予想サイト｜無料予想・的中実績公開中">
+  <meta property="og:description" content="競艇（ボートレース）の無料予想を毎日公開。的中実績・回収率もすべて公開。">
+  <meta property="og:url" content="https://YOUR-USERNAME.github.io/boatrace-yosou/">
+  <meta property="og:image" content="https://YOUR-USERNAME.github.io/boatrace-yosou/images/ogp.jpg">
+  <meta property="og:site_name" content="ボートレース予想サイト">
+  <meta property="og:locale" content="ja_JP">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="ボートレース予想サイト｜無料予想・的中実績公開中">
+  <meta name="twitter:description" content="競艇（ボートレース）の無料予想を毎日公開。的中実績もすべて公開中。">
+  <meta name="twitter:image" content="https://YOUR-USERNAME.github.io/boatrace-yosou/images/ogp.jpg">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "ボートレース予想サイト",
+    "url": "https://YOUR-USERNAME.github.io/boatrace-yosou/",
+    "description": "競艇（ボートレース）の無料予想を毎日公開。的中実績・回収率もすべて公開。",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://YOUR-USERNAME.github.io/boatrace-yosou/yosou.html?q={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+  </script>
+
+  <!-- Google Analytics 4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --navy: #0A1628;
+      --navy-mid: #0F2040;
+      --navy-light: #162d55;
+      --gold: #D4AF37;
+      --gold-light: #F0D060;
+      --gold-dark: #B8960F;
+      --white: #FFFFFF;
+      --gray: #8A9BB5;
+      --gray-light: #E8EDF5;
+      --red: #E63946;
+      --green: #2DC653;
+      --text: #FFFFFF;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Noto Sans JP', sans-serif;
+      background: var(--navy);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: var(--navy);
+      border-bottom: 2px solid var(--gold);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 1rem;
+    }
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--white);
+    }
+    .logo-icon {
+      width: 36px; height: 36px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border-radius: 8px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 20px;
+    }
+    .logo-text {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--gold);
+      letter-spacing: 1px;
+    }
+    .logo-sub {
+      font-size: 0.65rem;
+      color: var(--gray);
+      display: block;
+    }
+    nav { display: flex; gap: 0.2rem; align-items: center; }
+    nav a {
+      color: var(--gray);
+      text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all 0.2s;
+    }
+    nav a:hover { color: var(--gold); background: rgba(212,175,55,0.08); }
+    .btn-register {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy) !important;
+      font-weight: 700 !important;
+      border-radius: 20px !important;
+      padding: 0.4rem 1.2rem !important;
+    }
+    .btn-register:hover { opacity: 0.9; transform: translateY(-1px); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 24px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+    .mobile-nav {
+      display: none;
+      flex-direction: column;
+      background: var(--navy-mid);
+      padding: 1rem;
+      border-top: 1px solid var(--navy-light);
+    }
+    .mobile-nav a {
+      color: var(--gray);
+      text-decoration: none;
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--navy-light);
+      font-size: 0.9rem;
+    }
+    .mobile-nav a:last-child { border-bottom: none; }
+
+    /* ===== HERO ===== */
+    .hero {
+      background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 50%, #0a2040 100%);
+      padding: 5rem 1rem 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4AF37' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+    .wave-bg {
+      position: absolute; bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(180deg, transparent, rgba(10,22,40,0.5));
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(212,175,55,0.15);
+      border: 1px solid rgba(212,175,55,0.4);
+      color: var(--gold);
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 0.35rem 1rem;
+      border-radius: 20px;
+      margin-bottom: 1.5rem;
+      letter-spacing: 1px;
+    }
+    .hero h1 {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .hero h1 span { color: var(--gold); }
+    .hero-sub {
+      font-size: clamp(0.9rem, 2.5vw, 1.1rem);
+      color: var(--gray);
+      margin-bottom: 2rem;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .hero-stats {
+      display: flex; justify-content: center; gap: 2rem;
+      margin-bottom: 2.5rem;
+      flex-wrap: wrap;
+    }
+    .hero-stat {
+      text-align: center;
+    }
+    .hero-stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.75rem;
+      color: var(--gray);
+      margin-top: 0.2rem;
+    }
+    .hero-stat-divider { width: 1px; background: var(--navy-light); }
+    .btn-primary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--navy);
+      font-weight: 700;
+      font-size: 1rem;
+      padding: 0.9rem 2.2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: none; cursor: pointer;
+      transition: all 0.3s;
+      box-shadow: 0 4px 20px rgba(212,175,55,0.4);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(212,175,55,0.5); }
+    .btn-secondary {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: transparent;
+      color: var(--white);
+      font-weight: 500;
+      font-size: 1rem;
+      padding: 0.9rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      border: 1px solid rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .btn-secondary:hover { border-color: var(--gold); color: var(--gold); }
+    .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ===== SECTION ===== */
+    section { padding: 4rem 1rem; }
+    .container { max-width: 1200px; margin: 0 auto; }
+    .section-header { text-align: center; margin-bottom: 2.5rem; }
+    .section-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      color: var(--gold);
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .section-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.6rem, 3.5vw, 2.2rem);
+      font-weight: 700;
+    }
+    .section-title span { color: var(--gold); }
+    .section-desc { color: var(--gray); font-size: 0.9rem; margin-top: 0.5rem; }
+
+    /* ===== TODAY PICKS ===== */
+    .today-section { background: var(--navy-mid); }
+    .picks-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.2rem;
+    }
+    .pick-card {
+      background: var(--navy);
+      border: 1px solid var(--navy-light);
+      border-radius: 12px;
+      overflow: hidden;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .pick-card:hover { transform: translateY(-4px); border-color: rgba(212,175,55,0.5); }
+    .pick-card-header {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0.8rem 1rem;
+      background: rgba(212,175,55,0.08);
+      border-bottom: 1px solid var(--navy-light);
+    }
+    .pick-jyo { font-weight: 700; font-size: 0.95rem; }
+    .pick-race { font-size: 0.8rem; color: var(--gray); }
+    .pick-grade {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.2rem 0.6rem;
+      border-radius: 10px;
+      background: rgba(212,175,55,0.2);
+      color: var(--gold);
+      border: 1px solid rgba(212,175,55,0.4);
+    }
+    .pick-card-body { padding: 1rem; }
+    .pick-kaimoku {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      margin-bottom: 0.3rem;
+    }
+    .pick-type { font-size: 0.75rem; color: var(--gray); margin-bottom: 0.8rem; }
+    .pick-reason { font-size: 0.82rem; color: var(--gray); line-height: 1.6; }
+    .pick-card-footer {
+      padding: 0.7rem 1rem;
+      border-top: 1px solid var(--navy-light);
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .pick-time { font-size: 0.75rem; color: var(--gray); }
+    .pick-link {
+      font-size: 0.8rem;
+      color: var(--gold);
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .result-badge {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.6rem;
+      border-radius: 10px;
+    }
+    .result-win { background: rgba(45,198,83,0.2); color: var(--green); border: 1px solid rgba(45,198,83,0.4); }
+    .result-pending { background: rgba(212,175,55,0.1); color: var(--gold); border: 1px solid rgba(212,175,55,0.3); }
+    .result-lose { background: rgba(230,57,70,0.2); color: var(--red); border: 1px solid rgba(230,57,70,0.4); }
+
+    /* ===== JIKKEKI ===== */
+    .jikkeki-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .jikkeki-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-light);
+      border-radius: 12px;
+      padding: 1.2rem;
+      display: flex; gap: 1rem; align-items: flex-start;
+      transition: border-color 0.3s;
+    }
+    .jikkeki-card:hover { border-color: rgba(45,198,83,0.4); }
+    .jikkeki-icon {
+      width: 44px; height: 44px;
+      background: rgba(45,198,83,0.15);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      flex-shrink: 0;
+    }
+    .jikkeki-info { flex: 1; }
+    .jikkeki-jyo { font-weight: 700; font-size: 0.9rem; margin-bottom: 0.2rem; }
+    .jikkeki-kaimoku { font-family: 'Oswald', sans-serif; font-size: 1.3rem; color: var(--gold); }
+    .jikkeki-refund { font-size: 0.8rem; color: var(--green); font-weight: 700; }
+    .jikkeki-date { font-size: 0.72rem; color: var(--gray); margin-top: 0.2rem; }
+
+    /* ===== STATS BAR ===== */
+    .stats-bar {
+      background: linear-gradient(135deg, var(--navy-mid), var(--navy-light));
+      border-top: 1px solid var(--navy-light);
+      border-bottom: 1px solid var(--navy-light);
+    }
+    .stats-bar-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-around;
+      padding: 2rem 1rem;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .stat-item { text-align: center; }
+    .stat-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 700;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-unit { font-size: 1rem; color: var(--gold); }
+    .stat-label { font-size: 0.78rem; color: var(--gray); margin-top: 0.3rem; }
+
+    /* ===== JYO GRID ===== */
+    .jyo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 0.8rem;
+    }
+    .jyo-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-light);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      text-decoration: none;
+      color: var(--white);
+      transition: all 0.3s;
+    }
+    .jyo-card:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+    .jyo-card-icon { font-size: 1.5rem; margin-bottom: 0.4rem; }
+    .jyo-card-name { font-weight: 700; font-size: 0.9rem; }
+    .jyo-card-pref { font-size: 0.7rem; color: var(--gray); margin-top: 0.2rem; }
+
+    /* ===== KNOWLEDGE ===== */
+    .knowledge-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.2rem;
+    }
+    .knowledge-card {
+      background: var(--navy-mid);
+      border: 1px solid var(--navy-light);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: border-color 0.3s;
+    }
+    .knowledge-card:hover { border-color: rgba(212,175,55,0.4); }
+    .knowledge-icon {
+      width: 48px; height: 48px;
+      background: rgba(212,175,55,0.1);
+      border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .knowledge-title { font-weight: 700; font-size: 1rem; margin-bottom: 0.5rem; color: var(--gold); }
+    .knowledge-desc { font-size: 0.83rem; color: var(--gray); line-height: 1.7; }
+
+    /* ===== CTA BANNER ===== */
+    .cta-banner {
+      background: linear-gradient(135deg, var(--navy-light), var(--navy-mid));
+      border: 1px solid rgba(212,175,55,0.3);
+      border-radius: 16px;
+      padding: 2.5rem 2rem;
+      text-align: center;
+      margin: 2rem 0;
+    }
+    .cta-banner h2 {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem;
+      margin-bottom: 0.8rem;
+    }
+    .cta-banner h2 span { color: var(--gold); }
+    .cta-banner p { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; }
+    .cta-features {
+      display: flex; justify-content: center; gap: 1.5rem;
+      flex-wrap: wrap; margin-bottom: 1.5rem;
+    }
+    .cta-feature {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 0.85rem; color: var(--gray);
+    }
+    .cta-feature span:first-child { color: var(--green); font-weight: 700; }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #060e1c;
+      border-top: 1px solid var(--navy-light);
+      padding: 3rem 1rem 1.5rem;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 2rem;
+    }
+    .footer-brand .logo-text { display: block; font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .footer-desc { font-size: 0.8rem; color: var(--gray); line-height: 1.7; }
+    .footer-col h4 { font-size: 0.85rem; font-weight: 700; color: var(--gold); margin-bottom: 0.8rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 0.5rem; }
+    .footer-col ul li a { font-size: 0.82rem; color: var(--gray); text-decoration: none; transition: color 0.2s; }
+    .footer-col ul li a:hover { color: var(--gold); }
+    .footer-divider { border: none; border-top: 1px solid var(--navy-light); margin-bottom: 1.5rem; }
+    .footer-warning {
+      background: rgba(230,57,70,0.08);
+      border: 1px solid rgba(230,57,70,0.2);
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .footer-warning h5 { color: var(--red); font-size: 0.82rem; margin-bottom: 0.4rem; }
+    .footer-warning p { font-size: 0.75rem; color: var(--gray); line-height: 1.7; }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.5rem;
+    }
+    .footer-copy { font-size: 0.75rem; color: var(--gray); }
+    .footer-links { display: flex; gap: 1rem; }
+    .footer-links a { font-size: 0.75rem; color: var(--gray); text-decoration: none; }
+    .footer-links a:hover { color: var(--gold); }
+
+    /* ===== DISCLAIMER ===== */
+    .disclaimer-bar {
+      background: rgba(212,175,55,0.06);
+      border-bottom: 1px solid rgba(212,175,55,0.15);
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-size: 0.72rem;
+      color: var(--gray);
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      nav { display: none; }
+      .hamburger { display: flex; }
+      .mobile-nav.open { display: flex; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .hero { padding: 3.5rem 1rem 3rem; }
+      .hero-stat-divider { display: none; }
+    }
+    @media (max-width: 480px) {
+      .footer-grid { grid-template-columns: 1fr; }
+      .stats-bar-inner { gap: 1rem; }
+    }
+
+    /* ===== ANIMATION ===== */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeInUp 0.6s ease-out both; }
+    .fade-up-1 { animation-delay: 0.1s; }
+    .fade-up-2 { animation-delay: 0.2s; }
+    .fade-up-3 { animation-delay: 0.3s; }
+
+    /* ===== PULSE ===== */
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.6; }
+    }
+    .live-dot {
+      display: inline-block;
+      width: 8px; height: 8px;
+      background: var(--green);
+      border-radius: 50%;
+      animation: pulse 1.5s infinite;
+      margin-right: 4px;
+    }
+
+    /* ===== MANSHUKEN ===== */
+    @keyframes shimmer {
+      0% { background-position: -200% center; }
+      100% { background-position: 200% center; }
+    }
+    @keyframes floatUp {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+    .manshuken-section {
+      background: linear-gradient(135deg, #0a1628 0%, #1a0a00 50%, #0a1628 100%);
+      position: relative;
+      overflow: hidden;
+    }
+    .manshuken-section::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,140,0,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .manshuken-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+    .manshuken-label {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 0.75rem; font-weight: 700; letter-spacing: 2px;
+      color: #FF8C00; text-transform: uppercase;
+      background: rgba(255,140,0,0.12);
+      border: 1px solid rgba(255,140,0,0.35);
+      padding: 0.3rem 1rem; border-radius: 20px;
+      margin-bottom: 0.8rem;
+    }
+    .manshuken-title {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      font-weight: 700; line-height: 1.2;
+    }
+    .manshuken-title .fire { color: #FF6B00; }
+    .manshuken-title .gold-text {
+      background: linear-gradient(90deg, #FF8C00, #FFD700, #FF8C00);
+      background-size: 200% auto;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 3s linear infinite;
+    }
+    .manshuken-desc { color: var(--gray); font-size: 0.9rem; margin-top: 0.5rem; }
+    /* Big card */
+    .manshuken-hero-card {
+      background: linear-gradient(135deg, #1a0800, #2a1000);
+      border: 2px solid rgba(255,140,0,0.6);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 0 40px rgba(255,100,0,0.2), inset 0 1px 0 rgba(255,200,0,0.15);
+    }
+    .manshuken-hero-card::before {
+      content: '万';
+      position: absolute; right: -10px; top: -20px;
+      font-family: 'Oswald', sans-serif;
+      font-size: 12rem; font-weight: 900;
+      color: rgba(255,140,0,0.04); line-height: 1;
+      pointer-events: none; user-select: none;
+    }
+    .mh-top {
+      display: flex; justify-content: space-between; align-items: flex-start;
+      flex-wrap: wrap; gap: 1rem; margin-bottom: 1.5rem;
+    }
+    .mh-info {}
+    .mh-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: linear-gradient(135deg, #FF6B00, #FF4500);
+      color: #fff; font-size: 0.72rem; font-weight: 900;
+      padding: 0.25rem 0.8rem; border-radius: 20px;
+      margin-bottom: 0.5rem; letter-spacing: 1px;
+    }
+    .mh-jyo { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.2rem; }
+    .mh-race { font-size: 0.82rem; color: var(--gray); }
+    .mh-refund-block { text-align: right; }
+    .mh-refund-label { font-size: 0.72rem; color: #FF8C00; margin-bottom: 0.2rem; font-weight: 700; letter-spacing: 1px; }
+    .mh-refund-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: clamp(2.2rem, 5vw, 3.5rem);
+      font-weight: 700; line-height: 1;
+      background: linear-gradient(90deg, #FF8C00, #FFD700, #FF8C00);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+      animation: shimmer 2.5s linear infinite;
+    }
+    .mh-kaimoku-row {
+      display: flex; align-items: center; gap: 1.5rem;
+      background: rgba(0,0,0,0.3); border-radius: 12px;
+      padding: 1rem 1.5rem; margin-bottom: 1rem;
+      flex-wrap: wrap; gap: 1rem;
+    }
+    .mh-kaimoku-label { font-size: 0.75rem; color: var(--gray); }
+    .mh-kaimoku-num {
+      font-family: 'Oswald', sans-serif;
+      font-size: 2.5rem; font-weight: 700;
+      color: #FFD700; letter-spacing: 2px;
+    }
+    .mh-type-badge {
+      background: rgba(255,140,0,0.15);
+      border: 1px solid rgba(255,140,0,0.4);
+      color: #FF8C00; font-size: 0.78rem; font-weight: 700;
+      padding: 0.3rem 0.8rem; border-radius: 8px;
+    }
+    .mh-reason { font-size: 0.85rem; color: var(--gray); line-height: 1.7; }
+    /* Grid cards */
+    .manshuken-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1rem;
+    }
+    .man-card {
+      background: linear-gradient(135deg, #150800, #200c00);
+      border: 1px solid rgba(255,140,0,0.35);
+      border-radius: 14px; padding: 1.2rem;
+      transition: all 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .man-card:hover {
+      border-color: rgba(255,140,0,0.7);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px rgba(255,100,0,0.2);
+    }
+    .man-card-top {
+      display: flex; justify-content: space-between; align-items: center;
+      margin-bottom: 0.8rem;
+    }
+    .man-jyo { font-weight: 700; font-size: 0.9rem; }
+    .man-race { font-size: 0.75rem; color: var(--gray); }
+    .man-win-badge {
+      font-size: 0.68rem; font-weight: 900;
+      background: rgba(255,100,0,0.2);
+      color: #FF6B00; border: 1px solid rgba(255,100,0,0.4);
+      padding: 0.15rem 0.5rem; border-radius: 8px;
+    }
+    .man-kaimoku {
+      font-family: 'Oswald', sans-serif;
+      font-size: 1.8rem; font-weight: 700;
+      color: #FFD700; margin-bottom: 0.2rem;
+    }
+    .man-type { font-size: 0.72rem; color: var(--gray); margin-bottom: 0.6rem; }
+    .man-refund {
+      font-size: 1rem; font-weight: 700;
+      color: #FF8C00;
+    }
+    .man-date { font-size: 0.72rem; color: var(--gray); margin-top: 0.3rem; }
+    /* Floating icon animation */
+    .fire-icon { animation: floatUp 2s ease-in-out infinite; display: inline-block; }
+    /* SEO keyword */
+    .manshuken-keyword-row {
+      display: flex; flex-wrap: wrap; gap: 0.5rem;
+      justify-content: center; margin-top: 2rem;
+    }
+    .keyword-tag {
+      background: rgba(255,140,0,0.08);
+      border: 1px solid rgba(255,140,0,0.2);
+      color: #FF8C00; font-size: 0.72rem;
+      padding: 0.25rem 0.7rem; border-radius: 12px;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Disclaimer Bar -->
+<div class="disclaimer-bar">
+  ⚠️ 当サイトの予想は参考情報です。舟券の購入は自己責任でお願いします。20歳未満の方の舟券購入は禁止されています。
+</div>
+
+<!-- Header -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="logo">
+      <div class="logo-icon">⛵</div>
+      <div>
+        <span class="logo-text">BOAT NAVI</span>
+        <span class="logo-sub">ボートレース予想サイト</span>
+      </div>
+    </a>
+    <nav>
+      <a href="yosou.html">無料予想</a>
+      <a href="jikkeki.html">的中実績</a>
+      <a href="manshuken.html" style="color:#FF8C00;">🔥 万舟券</a>
+      <a href="jyos.html">競艇場一覧</a>
+      <a href="knowledge.html">基礎知識</a>
+      <a href="contact.html">お問い合わせ</a>
+      <a href="register.html" class="btn-register">無料会員登録</a>
+    </nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="yosou.html">📋 無料予想</a>
+    <a href="jikkeki.html">🏆 的中実績</a>
+    <a href="manshuken.html" style="color:#FF8C00;font-weight:700;">🔥 万舟券</a>
+    <a href="jyos.html">🗾 競艇場一覧</a>
+    <a href="knowledge.html">📚 基礎知識</a>
+    <a href="contact.html">✉️ お問い合わせ</a>
+    <a href="register.html" style="color: var(--gold); font-weight: 700;">⭐ 無料会員登録</a>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-badge fade-up">
+      <span class="live-dot"></span> 本日の予想 公開中
+    </div>
+    <h1 class="fade-up fade-up-1">
+      競艇予想をもっと<br><span>スマートに。</span>
+    </h1>
+    <p class="hero-sub fade-up fade-up-2">
+      プロの分析による無料予想を毎日公開。<br>
+      的中実績・回収率もすべて透明公開しています。
+    </p>
+    <div class="hero-stats fade-up fade-up-2">
+      <div class="hero-stat">
+        <div class="hero-stat-num">68<span style="font-size:1rem">%</span></div>
+        <div class="hero-stat-label">直近30日的中率</div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">142<span style="font-size:1rem">%</span></div>
+        <div class="hero-stat-label">月間回収率</div>
+      </div>
+      <div class="hero-stat-divider"></div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">1,240</div>
+        <div class="hero-stat-label">累計予想本数</div>
+      </div>
+    </div>
+    <div class="hero-btns fade-up fade-up-3">
+      <a href="yosou.html" class="btn-primary">📋 本日の無料予想を見る</a>
+      <a href="jikkeki.html" class="btn-secondary">🏆 的中実績を確認する</a>
+    </div>
+  </div>
+  <div class="wave-bg"></div>
+</section>
+
+<!-- Stats Bar -->
+<div class="stats-bar">
+  <div class="stats-bar-inner">
+    <div class="stat-item">
+      <div class="stat-num">68<span class="stat-unit">%</span></div>
+      <div class="stat-label">今月の的中率</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">142<span class="stat-unit">%</span></div>
+      <div class="stat-label">今月の回収率</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">5</div>
+      <div class="stat-label">本日の公開予想数</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">2,400<span class="stat-unit">+</span></div>
+      <div class="stat-label">登録会員数</div>
+    </div>
+  </div>
+</div>
+
+<!-- Today's Picks -->
+<section class="today-section">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">TODAY'S PICKS</div>
+      <h2 class="section-title">本日の<span>無料予想</span></h2>
+      <p class="section-desc">今日公開中の予想ピックアップ</p>
+    </div>
+    <div class="picks-grid">
+
+      <div class="pick-card">
+        <div class="pick-card-header">
+          <div>
+            <div class="pick-jyo">🏟️ 住之江</div>
+            <div class="pick-race">第7レース｜15:30発走</div>
+          </div>
+          <span class="pick-grade">無料</span>
+        </div>
+        <div class="pick-card-body">
+          <div class="pick-kaimoku">1-2-3</div>
+          <div class="pick-type">3連単 ／ 本命◎</div>
+          <p class="pick-reason">1号艇の安定した助走距離と2号艇のターン技術が光る。インコースを主軸に手堅く攻める。</p>
+        </div>
+        <div class="pick-card-footer">
+          <span class="pick-time">更新: 12:00</span>
+          <span class="result-badge result-pending">⏳ 結果待ち</span>
+        </div>
+      </div>
+
+      <div class="pick-card">
+        <div class="pick-card-header">
+          <div>
+            <div class="pick-jyo">🏟️ 戸田</div>
+            <div class="pick-race">第9レース｜16:10発走</div>
+          </div>
+          <span class="pick-grade">無料</span>
+        </div>
+        <div class="pick-card-body">
+          <div class="pick-kaimoku">2-1-4</div>
+          <div class="pick-type">3連単 ／ 穴◯</div>
+          <p class="pick-reason">戸田特有のコース特性を考慮。2号艇が逃げ切る展開を想定。4号艇の台頭にも注目。</p>
+        </div>
+        <div class="pick-card-footer">
+          <span class="pick-time">更新: 11:30</span>
+          <span class="result-badge result-pending">⏳ 結果待ち</span>
+        </div>
+      </div>
+
+      <div class="pick-card">
+        <div class="pick-card-header">
+          <div>
+            <div class="pick-jyo">🏟️ 蒲郡</div>
+            <div class="pick-race">第6レース｜14:50発走</div>
+          </div>
+          <span class="pick-grade">無料</span>
+        </div>
+        <div class="pick-card-body">
+          <div class="pick-kaimoku">1-3-2</div>
+          <div class="pick-type">3連単 ／ 本命◎</div>
+          <p class="pick-reason">向かい風が収まる時間帯で1号艇有利の展開。3号艇のスタートタイミングが鍵。</p>
+        </div>
+        <div class="pick-card-footer">
+          <span class="pick-time">更新: 10:45</span>
+          <span class="result-badge result-win">✅ 的中</span>
+        </div>
+      </div>
+
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="yosou.html" class="btn-secondary">すべての予想を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Jikkeki -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">RESULTS</div>
+      <h2 class="section-title">最新<span>的中実績</span></h2>
+      <p class="section-desc">直近の的中情報をリアルタイムで公開</p>
+    </div>
+    <div class="jikkeki-grid">
+      <div class="jikkeki-card">
+        <div class="jikkeki-icon">🏆</div>
+        <div class="jikkeki-info">
+          <div class="jikkeki-jyo">住之江 第5R</div>
+          <div class="jikkeki-kaimoku">1-2-4</div>
+          <div class="jikkeki-refund">払戻 ¥12,400</div>
+          <div class="jikkeki-date">2025年5月9日</div>
+        </div>
+      </div>
+      <div class="jikkeki-card">
+        <div class="jikkeki-icon">🏆</div>
+        <div class="jikkeki-info">
+          <div class="jikkeki-jyo">蒲郡 第8R</div>
+          <div class="jikkeki-kaimoku">3-1-2</div>
+          <div class="jikkeki-refund">払戻 ¥8,700</div>
+          <div class="jikkeki-date">2025年5月9日</div>
+        </div>
+      </div>
+      <div class="jikkeki-card">
+        <div class="jikkeki-icon">🏆</div>
+        <div class="jikkeki-info">
+          <div class="jikkeki-jyo">戸田 第11R</div>
+          <div class="jikkeki-kaimoku">2-4-1</div>
+          <div class="jikkeki-refund">払戻 ¥24,300</div>
+          <div class="jikkeki-date">2025年5月8日</div>
+        </div>
+      </div>
+      <div class="jikkeki-card">
+        <div class="jikkeki-icon">🏆</div>
+        <div class="jikkeki-info">
+          <div class="jikkeki-jyo">平和島 第7R</div>
+          <div class="jikkeki-kaimoku">1-3-5</div>
+          <div class="jikkeki-refund">払戻 ¥6,200</div>
+          <div class="jikkeki-date">2025年5月8日</div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="jikkeki.html" class="btn-secondary">的中実績一覧を見る →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Manshuken Section -->
+<section class="manshuken-section">
+  <div class="container">
+    <div class="manshuken-header">
+      <div class="manshuken-label"><span class="fire-icon">🔥</span> MANSHUKEN RECORD</div>
+      <h2 class="manshuken-title">
+        <span class="fire">万舟券</span> <span class="gold-text">的中実績</span>
+      </h2>
+      <p class="manshuken-desc">払戻1万円以上の高配当的中をすべて公開。夢の万舟券を一緒に狙いましょう。</p>
+    </div>
+
+    <!-- Hero Big Win Card -->
+    <div class="manshuken-hero-card">
+      <div class="mh-top">
+        <div class="mh-info">
+          <div class="mh-badge">🔥 最高配当</div>
+          <div class="mh-jyo">🏟️ 若松競艇場　第11レース</div>
+          <div class="mh-race">2025年4月28日（月）｜SG クラシック</div>
+        </div>
+        <div class="mh-refund-block">
+          <div class="mh-refund-label">💰 払戻金額</div>
+          <div class="mh-refund-num">¥142,300</div>
+        </div>
+      </div>
+      <div class="mh-kaimoku-row">
+        <div>
+          <div class="mh-kaimoku-label">買い目</div>
+          <div class="mh-kaimoku-num">5-3-1</div>
+        </div>
+        <div class="mh-type-badge">3連単</div>
+        <div class="mh-type-badge">穴◎ 大本命</div>
+      </div>
+      <p class="mh-reason">5号艇の機力が直前整備で大幅アップ。スタート展示で鋭い伸びが確認でき、3号艇との連携で差し展開を読んだ。1号艇がスタートで遅れる可能性を見抜いた会心の1本。</p>
+    </div>
+
+    <!-- Grid -->
+    <div class="manshuken-grid">
+      <div class="man-card">
+        <div class="man-card-top">
+          <div><div class="man-jyo">🏟️ 住之江</div><div class="man-race">第9R｜2025.05.02</div></div>
+          <span class="man-win-badge">万舟💥</span>
+        </div>
+        <div class="man-kaimoku">4-6-2</div>
+        <div class="man-type">3連単 ／ 大穴◎</div>
+        <div class="man-refund">💰 払戻 ¥87,600</div>
+        <div class="man-date">4号艇の捲り差しが炸裂。6号艇の粘りも光る。</div>
+      </div>
+      <div class="man-card">
+        <div class="man-card-top">
+          <div><div class="man-jyo">🏟️ 戸田</div><div class="man-race">第7R｜2025.04.22</div></div>
+          <span class="man-win-badge">万舟💥</span>
+        </div>
+        <div class="man-kaimoku">6-2-4</div>
+        <div class="man-type">3連単 ／ 大穴◎</div>
+        <div class="man-refund">💰 払戻 ¥63,200</div>
+        <div class="man-date">6号艇が大外からのまくりを決めた展開。</div>
+      </div>
+      <div class="man-card">
+        <div class="man-card-top">
+          <div><div class="man-jyo">🏟️ 蒲郡</div><div class="man-race">第12R｜2025.04.15</div></div>
+          <span class="man-win-badge">万舟💥</span>
+        </div>
+        <div class="man-kaimoku">3-5-6</div>
+        <div class="man-type">3連単 ／ 穴◯</div>
+        <div class="man-refund">💰 払戻 ¥44,800</div>
+        <div class="man-date">向かい風でイン不利。3号艇のダッシュが決まる。</div>
+      </div>
+      <div class="man-card">
+        <div class="man-card-top">
+          <div><div class="man-jyo">🏟️ 福岡</div><div class="man-race">第8R｜2025.04.09</div></div>
+          <span class="man-win-badge">万舟💥</span>
+        </div>
+        <div class="man-kaimoku">5-1-3</div>
+        <div class="man-type">3連単 ／ 穴◯</div>
+        <div class="man-refund">💰 払戻 ¥31,500</div>
+        <div class="man-date">5号艇のモーター機力が突出。好スタートから逃切り。</div>
+      </div>
+      <div class="man-card">
+        <div class="man-card-top">
+          <div><div class="man-jyo">🏟️ 丸亀</div><div class="man-race">第10R｜2025.04.03</div></div>
+          <span class="man-win-badge">万舟💥</span>
+        </div>
+        <div class="man-kaimoku">4-2-6</div>
+        <div class="man-type">3連単 ／ 大穴◎</div>
+        <div class="man-refund">💰 払戻 ¥28,900</div>
+        <div class="man-date">海面コンディションが4号艇に追い風となった一戦。</div>
+      </div>
+      <div class="man-card">
+        <div class="man-card-top">
+          <div><div class="man-jyo">🏟️ 平和島</div><div class="man-race">第6R｜2025.03.28</div></div>
+          <span class="man-win-badge">万舟💥</span>
+        </div>
+        <div class="man-kaimoku">6-4-1</div>
+        <div class="man-type">3連単 ／ 大穴◎</div>
+        <div class="man-refund">💰 払戻 ¥19,700</div>
+        <div class="man-date">荒れ水面で6号艇が大駆け。予想通りの荒れ模様。</div>
+      </div>
+    </div>
+
+    <div class="manshuken-keyword-row">
+      <span class="keyword-tag">#万舟券</span>
+      <span class="keyword-tag">#高配当</span>
+      <span class="keyword-tag">#穴予想</span>
+      <span class="keyword-tag">#3連単</span>
+      <span class="keyword-tag">#大穴</span>
+      <span class="keyword-tag">#ボートレース万舟</span>
+      <span class="keyword-tag">#競艇高配当</span>
+    </div>
+
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="jikkeki.html" class="btn-primary" style="background:linear-gradient(135deg,#FF8C00,#FF4500);box-shadow:0 4px 20px rgba(255,100,0,0.4);">🔥 万舟券実績をすべて見る</a>
+    </div>
+  </div>
+</section>
+
+<!-- Jyo List -->
+<section style="background: var(--navy-mid);">
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">VENUES</div>
+      <h2 class="section-title"><span>競艇場</span>一覧</h2>
+      <p class="section-desc">全国24競艇場の特徴・攻略情報</p>
+    </div>
+    <div class="jyo-grid">
+      <a href="jyos.html#toda" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">戸田</div><div class="jyo-card-pref">埼玉県</div></a>
+      <a href="jyos.html#heiwajima" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">平和島</div><div class="jyo-card-pref">東京都</div></a>
+      <a href="jyos.html#tamagawa" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">多摩川</div><div class="jyo-card-pref">東京都</div></a>
+      <a href="jyos.html#hamanako" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">浜名湖</div><div class="jyo-card-pref">静岡県</div></a>
+      <a href="jyos.html#gamagori" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">蒲郡</div><div class="jyo-card-pref">愛知県</div></a>
+      <a href="jyos.html#tsuru" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">常滑</div><div class="jyo-card-pref">愛知県</div></a>
+      <a href="jyos.html#mikuni" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">三国</div><div class="jyo-card-pref">福井県</div></a>
+      <a href="jyos.html#biwako" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">琵琶湖</div><div class="jyo-card-pref">滋賀県</div></a>
+      <a href="jyos.html#suminoe" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">住之江</div><div class="jyo-card-pref">大阪府</div></a>
+      <a href="jyos.html#amagasaki" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">尼崎</div><div class="jyo-card-pref">兵庫県</div></a>
+      <a href="jyos.html#naruto" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">鳴門</div><div class="jyo-card-pref">徳島県</div></a>
+      <a href="jyos.html#marugame" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">丸亀</div><div class="jyo-card-pref">香川県</div></a>
+      <a href="jyos.html#kojima" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">児島</div><div class="jyo-card-pref">岡山県</div></a>
+      <a href="jyos.html#miyajima" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">宮島</div><div class="jyo-card-pref">広島県</div></a>
+      <a href="jyos.html#tokuyama" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">徳山</div><div class="jyo-card-pref">山口県</div></a>
+      <a href="jyos.html#shimonoseki" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">下関</div><div class="jyo-card-pref">山口県</div></a>
+      <a href="jyos.html#wakamatsu" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">若松</div><div class="jyo-card-pref">福岡県</div></a>
+      <a href="jyos.html#ashiya" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">芦屋</div><div class="jyo-card-pref">福岡県</div></a>
+      <a href="jyos.html#fukuoka" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">福岡</div><div class="jyo-card-pref">福岡県</div></a>
+      <a href="jyos.html#karatsu" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">唐津</div><div class="jyo-card-pref">佐賀県</div></a>
+      <a href="jyos.html#omura" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">大村</div><div class="jyo-card-pref">長崎県</div></a>
+      <a href="jyos.html#kawachi" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">桐生</div><div class="jyo-card-pref">群馬県</div></a>
+      <a href="jyos.html#edogawa" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">江戸川</div><div class="jyo-card-pref">東京都</div></a>
+      <a href="jyos.html#toda-s" class="jyo-card"><div class="jyo-card-icon">⛵</div><div class="jyo-card-name">津</div><div class="jyo-card-pref">三重県</div></a>
+    </div>
+  </div>
+</section>
+
+<!-- Knowledge -->
+<section>
+  <div class="container">
+    <div class="section-header">
+      <div class="section-label">KNOWLEDGE</div>
+      <h2 class="section-title">競艇<span>基礎知識</span></h2>
+      <p class="section-desc">初心者でも安心。ボートレースの基本から学べます</p>
+    </div>
+    <div class="knowledge-grid">
+      <div class="knowledge-card">
+        <div class="knowledge-icon">🎯</div>
+        <div class="knowledge-title">舟券の種類</div>
+        <p class="knowledge-desc">単勝・複勝・2連単・2連複・3連単・3連複・拡連複など、様々な賭け方があります。初心者には的中しやすい複勝や2連複がおすすめです。</p>
+      </div>
+      <div class="knowledge-card">
+        <div class="knowledge-icon">📊</div>
+        <div class="knowledge-title">出走表の見方</div>
+        <p class="knowledge-desc">選手のモーター機力・勝率・コース別成績などを確認しましょう。特にF（フライング）持ちの選手は慎重なスタートになりがちです。</p>
+      </div>
+      <div class="knowledge-card">
+        <div class="knowledge-icon">🏁</div>
+        <div class="knowledge-title">コースとレース展開</div>
+        <p class="knowledge-desc">1号艇はイン有利のため勝率が高い傾向があります。ただし、スタートタイムやモーター差によって展開は大きく変わります。</p>
+      </div>
+      <div class="knowledge-card">
+        <div class="knowledge-icon">💨</div>
+        <div class="knowledge-title">天候・水面の影響</div>
+        <p class="knowledge-desc">風向き・波の状態によってレース展開が変化します。向かい風ではインが有利になりやすく、追い風では差しが決まりやすくなります。</p>
+      </div>
+      <div class="knowledge-card">
+        <div class="knowledge-icon">🏅</div>
+        <div class="knowledge-title">グレードとランク</div>
+        <p class="knowledge-desc">SG・G1・G2・G3・一般戦とレースのグレードが分かれています。SGはトップ選手が集まる最高峰レース。選手のランクはA1〜B2で分類。</p>
+      </div>
+      <div class="knowledge-card">
+        <div class="knowledge-icon">💡</div>
+        <div class="knowledge-title">予想のコツ</div>
+        <p class="knowledge-desc">モーター2連率・選手の近況成績・コース別勝率を組み合わせて分析しましょう。当サイトの予想解説も参考にしてください。</p>
+      </div>
+    </div>
+    <div style="text-align:center; margin-top:2rem;">
+      <a href="knowledge.html" class="btn-secondary">もっと詳しく学ぶ →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA Banner -->
+<section style="background: var(--navy-mid);">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>無料会員登録で<span>もっと便利に</span></h2>
+      <p>登録は完全無料。予想通知・お気に入り保存など便利な機能が使えます。</p>
+      <div class="cta-features">
+        <div class="cta-feature"><span>✓</span> 予想通知メール</div>
+        <div class="cta-feature"><span>✓</span> 的中履歴の保存</div>
+        <div class="cta-feature"><span>✓</span> お気に入り競艇場登録</div>
+        <div class="cta-feature"><span>✓</span> 完全無料</div>
+      </div>
+      <a href="register.html" class="btn-primary">⭐ 無料で会員登録する</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <span class="logo-text" style="font-family:'Oswald',sans-serif; color:var(--gold);">BOAT NAVI</span>
+        <p class="footer-desc">競艇（ボートレース）の無料予想を毎日公開。的中実績・回収率もすべて透明公開。予想は参考情報です。舟券の購入は自己責任でお願いします。</p>
+      </div>
+      <div class="footer-col">
+        <h4>予想・実績</h4>
+        <ul>
+          <li><a href="yosou.html">無料予想一覧</a></li>
+          <li><a href="jikkeki.html">的中実績</a></li>
+          <li><a href="premium.html">有料予想</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>競艇情報</h4>
+        <ul>
+          <li><a href="jyos.html">競艇場一覧</a></li>
+          <li><a href="knowledge.html">基礎知識</a></li>
+          <li><a href="knowledge.html#baiken">舟券の買い方</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>サポート</h4>
+        <ul>
+          <li><a href="contact.html">お問い合わせ</a></li>
+          <li><a href="privacy.html">プライバシーポリシー</a></li>
+          <li><a href="terms.html">利用規約</a></li>
+          <li><a href="register.html">会員登録</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="footer-warning">
+      <h5>⚠️ ギャンブル等依存症に関する注意</h5>
+      <p>競艇（ボートレース）はギャンブルです。当サイトの予想はあくまで参考情報であり、的中を保証するものではありません。「必ず勝てる」「投資として活用できる」などの表現は一切しておりません。ギャンブル依存症が疑われる方は、専門の相談窓口（公益財団法人日本レジャーチャンネル依存問題研究所 電話：0120-00-8725）にご相談ください。20歳未満の方の舟券購入は法律で禁止されています。</p>
+    </div>
+    <div class="footer-bottom">
+      <div class="footer-copy">© 2025 BOAT NAVI. All rights reserved.</div>
+      <div class="footer-links">
+        <a href="privacy.html">プライバシーポリシー</a>
+        <a href="terms.html">利用規約</a>
+        <a href="contact.html">お問い合わせ</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById('mobileNav');
+    nav.classList.toggle('open');
+  }
+</script>
+
+</body>
+</html>
