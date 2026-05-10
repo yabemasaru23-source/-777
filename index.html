@@ -554,7 +554,7 @@ async function ai(type){
         'anthropic-version':'2023-06-01',
         'anthropic-dangerous-direct-browser-access':'true'
       },
-      body:JSON.stringify({model:'claude-sonnet-4-20250514',max_tokens:1000,messages:[{role:'user',content:PROMPTS[type]}]})
+      body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,messages:[{role:'user',content:PROMPTS[type]}]})
     });
     if(!res.ok){var err=await res.json();throw new Error(err.error&&err.error.message?err.error.message:'HTTP '+res.status);}
     var data=await res.json();
