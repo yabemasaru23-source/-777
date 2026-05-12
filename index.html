@@ -574,6 +574,7 @@ function go(name){
   var nb=document.getElementById('n-'+name);
   if(nb)nb.classList.add('on');
   window.scrollTo(0,0);
+  if(name==='harai') setTimeout(initHarai,50);
 }
 function doFilter(){
   var d=document.getElementById('fd').value;
@@ -772,12 +773,7 @@ function showHaraiResult(jcd,name,el){
     </table>`;
 }
 
-/* 払戻金ページに移動した時に初期化 */
-const _origGo=go;
-function go(name){
-  _origGo(name);
-  if(name==='harai') setTimeout(initHarai,100);
-}
+
 </script>
 </body>
 </html>
