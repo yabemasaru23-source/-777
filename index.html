@@ -729,7 +729,7 @@ function showHaraiResult(jcd,name,el){
   const rows=[];
   res.forEach(r=>{
     const rno = r.number || r.race_number || r.rno || '?';
-    const pays = r.payoffs || {};
+    const pays = r.payouts || r.payoffs || {};
     const trifecta = pays.trifecta || pays['三連単'] || pays['3連単'] || null;
     if(trifecta && trifecta.combination){
       rows.push({
