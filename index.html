@@ -728,28 +728,23 @@ function showHaraiResult(jcd,name,el){
   document.getElementById('harai-result-wrap').scrollIntoView({behavior:'smooth'});
   const rows=[];
   res.forEach(r=>{
-    const rno=r.number||r.race_number||r.rno||'?';
-    const pays=r.payoffs||{};
-    // payoffs.trifecta が実際のデータ構造
-    const trifecta = pays.trifecta||pays.三連単||null;
-    if(trifecta){
-      const km = trifecta.combination||trifecta.numbers||'—';
-      const ref = parseInt(trifecta.amount||trifecta.payout||0);
-      rows.push({race:rno, km, ref});
-    } else if(Array.isArray(pays)){
-      pays.forEach(p=>{
-        const bm=String(p.betting_method||p.type||p.bet_type||'');
-        const bmn=String(p.betting_method_name||p.type_name||p.name||'');
-        if(bm==='8'||bmn.includes('3連単')||bmn.toLowerCase().includes('trifecta')){
-          rows.push({race:rno,km:p.combination||'—',ref:parseInt(p.amount||p.payout||0)});
-        }
+    const rno = r.number || r.race_number || r.rno || '?';
+    const pays = r.payoffs || {};
+    const trifecta = pays.trifecta || pays['三連単'] || pays['3連単'] || null;
+    if(trifecta && trifecta.combination){
+      rows.push({
+        race: rno,
+        km: trifecta.combination,
+        ref: parseInt(trifecta.amount || 0)
       });
     } else {
-      // フォールバック: boats から1〜3着を組番に
-      const boats = r.boats||[];
-      const top3 = boats.filter(b=>b.racer_place_number>=1&&b.racer_place_number<=3).sort((a,b)=>a.racer_place_number-b.racer_place_number).map(b=>b.racer_boat_number);
-      if(top3.length>=3) rows.push({race:rno,km:top3.join('-'),ref:0});
-      else rows.push({race:rno,km:'—',ref:0});
+      // フォールバック: boats から着順で組番を作る
+      const boats = r.boats || [];
+      const sorted = boats
+        .filter(b => b.racer_place_number >= 1 && b.racer_place_number <= 3)
+        .sort((a,b) => a.racer_place_number - b.racer_place_number);
+      const km = sorted.length >= 3 ? sorted.map(b=>b.racer_boat_number).join('-') : '—';
+      rows.push({race:rno, km, ref:0});
     }
   });
   rows.sort((a,b)=>parseInt(a.race)-parseInt(b.race));
