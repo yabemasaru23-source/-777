@@ -693,7 +693,7 @@ function buildHaraiJyo(data,dp){
   const res=data.results||[];
   const jm={};
   res.forEach(r=>{
-    const j=String(r.race_stadium_number||r.stadium_number||r.jcd||'').padStart(2,'0');
+    const j=String(r.stadium_number||r.race_stadium_number||r.jcd||'').padStart(2,'0');
     if(j&&j!=='00'){if(!jm[j])jm[j]=[];jm[j].push(r);}
   });
   const keys=Object.keys(jm);
@@ -722,29 +722,33 @@ function showHaraiResult(jcd,name,el){
   document.querySelectorAll('#harai-jyo-grid > div').forEach(c=>{c.style.borderColor='var(--nl)';c.classList.remove('hon');});
   el.style.borderColor='var(--gold)';el.classList.add('hon');
   if(!haraiData)return;
-  const res=(haraiData.results||[]).filter(r=>String(r.race_stadium_number||r.stadium_number||r.jcd||'').padStart(2,'0')===jcd);
+  const res=(haraiData.results||[]).filter(r=>String(r.stadium_number||r.race_stadium_number||r.jcd||'').padStart(2,'0')===jcd);
   document.getElementById('harai-result-title').textContent=`${name} の払戻金結果`;
   document.getElementById('harai-result-wrap').style.display='block';
   document.getElementById('harai-result-wrap').scrollIntoView({behavior:'smooth'});
   const rows=[];
   res.forEach(r=>{
-    const rno=r.race_number||r.rno||'?';
-    const pays=r.payoffs||r.race_payoffs||r.payout||[];
-    let found=false;
-    if(Array.isArray(pays)){
+    const rno=r.number||r.race_number||r.rno||'?';
+    const pays=r.payoffs||{};
+    // payoffs.trifecta が実際のデータ構造
+    const trifecta = pays.trifecta||pays.三連単||null;
+    if(trifecta){
+      const km = trifecta.combination||trifecta.numbers||'—';
+      const ref = parseInt(trifecta.amount||trifecta.payout||0);
+      rows.push({race:rno, km, ref});
+    } else if(Array.isArray(pays)){
       pays.forEach(p=>{
         const bm=String(p.betting_method||p.type||p.bet_type||'');
         const bmn=String(p.betting_method_name||p.type_name||p.name||'');
         if(bm==='8'||bmn.includes('3連単')||bmn.toLowerCase().includes('trifecta')){
-          rows.push({race:rno,km:p.combination||p.winning_combination||p.numbers||'—',ref:parseInt(p.payout||p.amount||p.dividend||0)});
-          found=true;
+          rows.push({race:rno,km:p.combination||'—',ref:parseInt(p.amount||p.payout||0)});
         }
       });
-    }
-    if(!found){
-      const rr=r.race_results||r.results||[];
-      const top3=rr.filter(x=>[1,2,3].includes(parseInt(x.place||x.arrival||x.rank||0))).sort((a,b)=>parseInt(a.place||a.arrival||a.rank||0)-parseInt(b.place||b.arrival||b.rank||0)).map(x=>x.boat_number||x.number||'?');
-      if(top3.length>=3)rows.push({race:rno,km:top3.slice(0,3).join('-'),ref:0});
+    } else {
+      // フォールバック: boats から1〜3着を組番に
+      const boats = r.boats||[];
+      const top3 = boats.filter(b=>b.racer_place_number>=1&&b.racer_place_number<=3).sort((a,b)=>a.racer_place_number-b.racer_place_number).map(b=>b.racer_boat_number);
+      if(top3.length>=3) rows.push({race:rno,km:top3.join('-'),ref:0});
       else rows.push({race:rno,km:'—',ref:0});
     }
   });
