@@ -3,615 +3,176 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>BOAT NAVI | ボートレース予想・万舟券・的中実績</title>
-<meta name="description" content="競艇（ボートレース）の無料予想・万舟券・的中実績を毎日公開。AIが最新情報をリアルタイムで更新します。">
-<meta name="keywords" content="競艇,ボートレース,予想,万舟券,無料予想,的中実績,3連単,高配当">
-<link rel="canonical" href="https://YOUR-USERNAME.github.io/boatrace-yosou/">
-<meta property="og:type" content="website">
-<meta property="og:title" content="BOAT NAVI | ボートレース予想・万舟券・的中実績">
-<meta property="og:description" content="AIが毎日ボートレース最新情報をリアルタイムで更新。無料予想・万舟券的中実績を公開。">
-<meta property="og:url" content="https://YOUR-USERNAME.github.io/boatrace-yosou/">
-<meta property="og:image" content="https://YOUR-USERNAME.github.io/boatrace-yosou/images/ogp.jpg">
-<meta name="twitter:card" content="summary_large_image">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"BOAT NAVI","url":"https://YOUR-USERNAME.github.io/boatrace-yosou/"}</script>
-<script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','GA_MEASUREMENT_ID');</script>
+<title>AI廣瀬｜ボートレース払戻金結果</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
 <style>
-:root{--navy:#0A1628;--nm:#0F2040;--nl:#162d55;--gold:#D4AF37;--gd:#B8960F;--gl:#F0D060;--w:#fff;--gr:#8A9BB5;--red:#E63946;--green:#2DC653;--ora:#FF8C00;--ord:#FF4500;}
-*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
-body{font-family:'Noto Sans JP',sans-serif;background:var(--navy);color:var(--w);line-height:1.6;overflow-x:hidden;}
-.page{display:none;}.page.active{display:block;}
-.disc{background:rgba(212,175,55,.07);border-bottom:1px solid rgba(212,175,55,.18);padding:.45rem 1rem;text-align:center;font-size:.72rem;color:var(--gr);}
-header{background:var(--navy);border-bottom:2px solid var(--gold);position:sticky;top:0;z-index:200;padding:0 1rem;}
-.hi{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;height:64px;}
-.logo{display:flex;align-items:center;gap:10px;cursor:pointer;}
-.li{width:36px;height:36px;background:linear-gradient(135deg,var(--gold),var(--gd));border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:20px;}
-.lt{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:var(--gold);}
-.ls{font-size:.62rem;color:var(--gr);display:block;}
-nav{display:flex;gap:.1rem;align-items:center;}
-.nb{background:none;border:none;color:var(--gr);padding:.4rem .75rem;border-radius:6px;font-size:.82rem;font-weight:500;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .2s;}
-.nb:hover,.nb.on{color:var(--gold);background:rgba(212,175,55,.09);}
-.nb.mn{color:var(--ora);}.nb.mn.on{background:rgba(255,140,0,.1);}
-.nb.rg{background:linear-gradient(135deg,var(--gold),var(--gd))!important;color:var(--navy)!important;font-weight:700!important;border-radius:20px!important;}
-.hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;background:none;border:none;}
-.hbg span{width:24px;height:2px;background:var(--w);border-radius:2px;}
-.mnav{display:none;flex-direction:column;background:var(--nm);border-top:1px solid var(--nl);}
-.mnav button{background:none;border:none;border-bottom:1px solid var(--nl);color:var(--gr);text-align:left;padding:.75rem 1.2rem;font-size:.88rem;cursor:pointer;font-family:'Noto Sans JP',sans-serif;width:100%;}
-.mnav button:hover{color:var(--gold);}
-.C{max-width:1200px;margin:0 auto;padding:0 1rem;}
-.S{padding:3.5rem 1rem;}
-/* BUTTONS */
-.bp{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--gold),var(--gd));color:var(--navy);font-weight:700;font-size:.95rem;padding:.8rem 2rem;border-radius:50px;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .3s;box-shadow:0 4px 20px rgba(212,175,55,.4);}
-.bp:hover{transform:translateY(-2px);}
-.bs{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--w);font-weight:500;font-size:.95rem;padding:.8rem 1.8rem;border-radius:50px;border:1px solid rgba(255,255,255,.3);cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .3s;}
-.bs:hover{border-color:var(--gold);color:var(--gold);}
-.bf2{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--ora),var(--ord));color:var(--w);font-weight:700;font-size:.95rem;padding:.8rem 2rem;border-radius:50px;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;box-shadow:0 4px 20px rgba(255,100,0,.4);}
-/* BADGES */
-.rb{display:inline-flex;align-items:center;gap:3px;font-size:.7rem;font-weight:700;padding:.15rem .6rem;border-radius:10px;}
-.rw{background:rgba(45,198,83,.2);color:var(--green);border:1px solid rgba(45,198,83,.4);}
-.rp{background:rgba(212,175,55,.1);color:var(--gold);border:1px solid rgba(212,175,55,.3);}
-.rl{background:rgba(230,57,70,.2);color:var(--red);border:1px solid rgba(230,57,70,.4);}
-/* PICK CARDS */
-.pg{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:1.2rem;}
-.pc{background:var(--nm);border:1px solid var(--nl);border-radius:12px;overflow:hidden;transition:transform .3s,border-color .3s;}
-.pc:hover{transform:translateY(-4px);border-color:rgba(212,175,55,.5);}
-.ph2{display:flex;align-items:center;justify-content:space-between;padding:.8rem 1rem;background:rgba(212,175,55,.07);border-bottom:1px solid var(--nl);}
-.pj{font-weight:700;font-size:.92rem;}.pr{font-size:.75rem;color:var(--gr);}
-.pgr{font-size:.68rem;font-weight:700;padding:.18rem .6rem;border-radius:10px;background:rgba(212,175,55,.18);color:var(--gold);border:1px solid rgba(212,175,55,.4);}
-.pb{padding:1rem;}
-.pk{font-family:'Oswald',sans-serif;font-size:2rem;font-weight:700;color:var(--gold);margin-bottom:.15rem;}
-.pt{font-size:.72rem;color:var(--gr);margin-bottom:.7rem;}
-.pf{padding:.65rem 1rem;border-top:1px solid var(--nl);display:flex;align-items:center;justify-content:space-between;}
-.ptm{font-size:.72rem;color:var(--gr);}
-/* AI BOX */
-.ab{background:var(--nm);border:1px solid rgba(212,175,55,.3);border-radius:14px;padding:1.5rem;margin-bottom:1.5rem;}
-.ah{display:flex;align-items:center;gap:10px;margin-bottom:1rem;}
-.ad{width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite;}
-.al{font-size:.75rem;font-weight:700;color:var(--gold);letter-spacing:1px;}
-.ao{font-size:.87rem;color:var(--gr);line-height:1.8;white-space:pre-wrap;min-height:60px;}
-.fb3{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.3);color:var(--gold);font-size:.8rem;font-weight:700;padding:.4rem 1rem;border-radius:8px;cursor:pointer;font-family:'Noto Sans JP',sans-serif;margin-top:.8rem;transition:all .2s;}
-.fb3:hover{background:rgba(212,175,55,.2);}
-.fb3:disabled{opacity:.5;cursor:not-allowed;}
-/* STATS BAR */
-.sb{background:linear-gradient(135deg,var(--nm),var(--nl));border-top:1px solid var(--nl);border-bottom:1px solid var(--nl);}
-.sbi{max-width:1200px;margin:0 auto;display:flex;justify-content:space-around;padding:1.8rem 1rem;flex-wrap:wrap;gap:1.2rem;}
-.si{text-align:center;}
-.sn{font-family:'Oswald',sans-serif;font-size:2.6rem;font-weight:700;color:var(--gold);line-height:1;}
-.su{font-size:1rem;color:var(--gold);}
-.sl2{font-size:.75rem;color:var(--gr);margin-top:.2rem;}
-/* JIKKEKI */
-.jg{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem;}
-.jc{background:var(--nm);border:1px solid var(--nl);border-radius:12px;padding:1.1rem;display:flex;gap:1rem;align-items:flex-start;}
-.ji{width:42px;height:42px;background:rgba(45,198,83,.12);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:1.2rem;flex-shrink:0;}
-/* JYO */
-.yg{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;}
-.yc{background:var(--nm);border:1px solid var(--nl);border-radius:10px;padding:.9rem;text-align:center;cursor:default;transition:all .3s;}
-.yc:hover{border-color:var(--gold);color:var(--gold);}
-/* MANSHUKEN */
-@keyframes shm{0%{background-position:-200% center}100%{background-position:200% center}}
-@keyframes flt{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
-@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
-.ms{background:linear-gradient(135deg,#0a0600 0%,#1a0800 40%,#0a0600 100%);position:relative;}
-.ms::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,100,0,.13) 0%,transparent 68%);pointer-events:none;}
-.msh{background:linear-gradient(90deg,#FF8C00,#FFD700,#FF8C00);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shm 3s linear infinite;}
-.bwc{background:linear-gradient(135deg,#1a0800,#2a1000);border:2px solid rgba(255,140,0,.65);border-radius:18px;padding:1.8rem;margin-bottom:1.5rem;position:relative;overflow:hidden;}
-.bwc::before{content:'万';position:absolute;right:-8px;top:-18px;font-family:'Oswald',sans-serif;font-size:10rem;font-weight:900;color:rgba(255,140,0,.05);line-height:1;pointer-events:none;}
-.bwcr{display:inline-flex;align-items:center;background:linear-gradient(135deg,#FF6B00,#FF4500);color:#fff;font-size:.72rem;font-weight:900;padding:.25rem .85rem;border-radius:20px;margin-bottom:.8rem;}
-.bwct{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:1rem;margin-bottom:1.3rem;}
-.bwcrl{font-size:.7rem;color:var(--ora);font-weight:700;letter-spacing:1px;margin-bottom:.15rem;}
-.bwcrn{font-family:'Oswald',sans-serif;font-size:clamp(2rem,5vw,3.2rem);font-weight:700;line-height:1;background:linear-gradient(90deg,#FF8C00,#FFD700,#FF8C00);background-size:200% auto;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shm 2s linear infinite;}
-.bwcrow{display:flex;align-items:center;gap:1.2rem;background:rgba(0,0,0,.3);border-radius:10px;padding:.9rem 1.2rem;margin-bottom:1rem;flex-wrap:wrap;}
-.bwck{font-family:'Oswald',sans-serif;font-size:2.4rem;font-weight:700;color:#FFD700;letter-spacing:2px;}
-.bwctp{background:rgba(255,140,0,.15);border:1px solid rgba(255,140,0,.4);color:var(--ora);font-size:.75rem;font-weight:700;padding:.25rem .75rem;border-radius:7px;}
-.mg{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1rem;}
-.mc{background:linear-gradient(135deg,#150800,#200c00);border:1px solid rgba(255,140,0,.38);border-radius:13px;padding:1.2rem;transition:all .3s;}
-.mc:hover{border-color:rgba(255,140,0,.75);transform:translateY(-3px);}
-.mct{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem;}
-.mb2{font-size:.65rem;font-weight:900;background:rgba(255,100,0,.18);color:#FF6B00;border:1px solid rgba(255,100,0,.4);padding:.12rem .48rem;border-radius:7px;}
-.mkm{font-family:'Oswald',sans-serif;font-size:1.9rem;font-weight:700;color:#FFD700;margin-bottom:.15rem;letter-spacing:2px;}
-.mrf{font-size:1rem;font-weight:700;color:var(--ora);}
-.mdt{font-size:.7rem;color:var(--gr);margin-top:.3rem;}
-.kwr{display:flex;flex-wrap:wrap;gap:.45rem;margin:1.5rem 0;}
-.kwt{background:rgba(255,140,0,.08);border:1px solid rgba(255,140,0,.2);color:var(--ora);font-size:.7rem;padding:.22rem .65rem;border-radius:11px;}
-/* CHART */
-.cw{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-bottom:2rem;}
-.cc{background:var(--nm);border:1px solid var(--nl);border-radius:12px;padding:1.4rem;}
-.ct2{font-weight:700;font-size:.9rem;color:var(--gold);margin-bottom:1rem;}
-.br{display:flex;align-items:center;gap:10px;margin-bottom:.7rem;}
-.bl{font-size:.75rem;color:var(--gr);width:55px;flex-shrink:0;}
-.bt{flex:1;height:8px;background:var(--nl);border-radius:4px;overflow:hidden;}
-.bfl{height:100%;border-radius:4px;background:linear-gradient(90deg,var(--gold),var(--gl));}
-.bfl.g{background:linear-gradient(90deg,var(--green),#7DF5A5);}
-.bv{font-size:.75rem;color:var(--w);font-weight:700;width:38px;text-align:right;flex-shrink:0;}
-/* TABLE */
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans JP',sans-serif;background:#0A1628;color:#fff;min-height:100vh;}
+.top-bar{background:linear-gradient(135deg,#0A1628,#162d55);border-bottom:3px solid #D4AF37;padding:1.5rem 1rem;}
+.top-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;text-align:center;}
+.pimg{width:80px;height:80px;border-radius:50%;border:3px solid #D4AF37;object-fit:cover;flex-shrink:0;}
+.stitle{font-family:'Oswald',sans-serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:700;color:#D4AF37;}
+.ssub{font-size:.85rem;color:#8A9BB5;margin-top:.3rem;}
+.C{max-width:1000px;margin:0 auto;padding:1.5rem 1rem;}
+.card{background:#0F2040;border:1px solid #162d55;border-radius:12px;padding:1.2rem;margin-bottom:1rem;}
+.stl{font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:700;color:#D4AF37;margin-bottom:1rem;}
+.dtabs{display:flex;gap:.5rem;margin-bottom:1rem;flex-wrap:wrap;}
+.dtab{background:#162d55;border:1px solid #1e3a6a;color:#8A9BB5;font-size:.82rem;padding:.4rem .9rem;border-radius:20px;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .2s;}
+.dtab.active,.dtab:hover{background:#D4AF37;color:#0A1628;font-weight:700;}
+.jg{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:.7rem;}
+.jc{background:#162d55;border:1px solid #1e3a6a;border-radius:10px;padding:.8rem;text-align:center;cursor:pointer;transition:all .2s;}
+.jc:hover,.jc.on{border-color:#D4AF37;background:#1e3a6a;}
+.jn{font-weight:700;font-size:.92rem;}
+.jcnt{font-size:.7rem;color:#8A9BB5;margin-top:.25rem;}
+.sg{display:grid;grid-template-columns:repeat(auto-fit,minmax(110px,1fr));gap:.7rem;margin-bottom:1rem;}
+.sv{background:#162d55;border-radius:10px;padding:.8rem;text-align:center;}
+.sn{font-family:'Oswald',sans-serif;font-size:1.5rem;font-weight:700;color:#D4AF37;}
+.sl{font-size:.7rem;color:#8A9BB5;margin-top:.2rem;}
 .rt{width:100%;border-collapse:collapse;}
-.rt th{background:rgba(212,175,55,.1);color:var(--gold);font-size:.78rem;padding:.7rem .9rem;text-align:left;border-bottom:1px solid var(--nl);}
-.rt td{padding:.75rem .9rem;border-bottom:1px solid var(--nl);font-size:.82rem;color:var(--gr);}
-.rt tr:hover td{background:rgba(212,175,55,.03);}
-.kc{font-family:'Oswald',sans-serif;font-size:1.05rem;color:var(--gold);}
-.rfc{color:var(--green);font-weight:700;}
-/* FORM */
-.fc3{background:var(--nm);border:1px solid var(--nl);border-radius:16px;padding:2rem;max-width:680px;margin:0 auto;}
-.fg{margin-bottom:1.3rem;}
-label{display:block;font-size:.83rem;font-weight:700;margin-bottom:.45rem;}
-.req{color:var(--red);font-size:.72rem;margin-left:4px;}
-input,textarea,select{width:100%;background:var(--navy);border:1px solid var(--nl);color:var(--w);padding:.7rem 1rem;border-radius:8px;font-size:.88rem;font-family:'Noto Sans JP',sans-serif;transition:border-color .2s;}
-input:focus,textarea:focus,select:focus{outline:none;border-color:var(--gold);}
-input::placeholder,textarea::placeholder{color:var(--gr);}
-textarea{resize:vertical;min-height:140px;}
-.sbtn{width:100%;background:linear-gradient(135deg,var(--gold),var(--gd));color:var(--navy);font-weight:700;font-size:.95rem;padding:.95rem;border-radius:50px;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;}
-.suc{display:none;background:rgba(45,198,83,.12);border:1px solid rgba(45,198,83,.4);border-radius:8px;padding:1.5rem;text-align:center;margin-top:1.2rem;}
-.suc.show{display:block;}
-/* CTA */
-.cta{background:linear-gradient(135deg,var(--nl),var(--nm));border:1px solid rgba(212,175,55,.3);border-radius:16px;padding:2.5rem 2rem;text-align:center;}
-/* HERO */
-.hero{background:linear-gradient(135deg,var(--navy) 0%,var(--nm) 50%,#0a2040 100%);padding:4.5rem 1rem 3.5rem;text-align:center;position:relative;overflow:hidden;}
-.hbdg{display:inline-flex;align-items:center;gap:6px;background:rgba(212,175,55,.13);border:1px solid rgba(212,175,55,.38);color:var(--gold);font-size:.76rem;font-weight:700;padding:.32rem 1rem;border-radius:20px;margin-bottom:1.4rem;letter-spacing:1px;}
-.ld{display:inline-block;width:8px;height:8px;background:var(--green);border-radius:50%;animation:pulse 1.5s infinite;}
-.hero h1{font-family:'Oswald',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:700;line-height:1.2;margin-bottom:.5rem;}
-.hero h1 span{color:var(--gold);}
-.hsub{font-size:clamp(.88rem,2.5vw,1.05rem);color:var(--gr);margin-bottom:1.8rem;max-width:560px;margin-left:auto;margin-right:auto;}
-.hsts{display:flex;justify-content:center;gap:2rem;margin-bottom:2.2rem;flex-wrap:wrap;}
-.hst{text-align:center;}
-.hsn{font-family:'Oswald',sans-serif;font-size:2.4rem;font-weight:700;color:var(--gold);line-height:1;}
-.hsl{font-size:.72rem;color:var(--gr);margin-top:.18rem;}
-.hbtns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
-/* PAGE HERO */
-.phero{background:linear-gradient(135deg,var(--nm),var(--navy));padding:2.8rem 1rem 2rem;border-bottom:1px solid var(--nl);}
-.pl{font-size:.7rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.38rem;}
-.ptl{font-family:'Oswald',sans-serif;font-size:clamp(1.6rem,4vw,2.2rem);font-weight:700;}
-.ptl span{color:var(--gold);}
-/* MAN HERO */
-.mhero{background:linear-gradient(135deg,#0a0800 0%,#1a0500 40%,#0a0800 100%);padding:4rem 1rem 3rem;text-align:center;position:relative;overflow:hidden;}
-.mhero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(255,100,0,.17) 0%,transparent 65%);}
-.mhero h1{font-family:'Oswald',sans-serif;font-size:clamp(2.2rem,6vw,4rem);font-weight:700;line-height:1.1;margin-bottom:.8rem;}
-.mhero p{color:var(--gr);font-size:.95rem;max-width:580px;margin:0 auto 1.8rem;}
-.msts{display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap;margin-bottom:1.8rem;}
-/* FILTER */
-.fb4{background:var(--nm);border-bottom:1px solid var(--nl);padding:.9rem 1rem;}
-.fi{max-width:1200px;margin:0 auto;display:flex;gap:.8rem;flex-wrap:wrap;align-items:center;}
-.fsel{background:var(--navy);border:1px solid var(--nl);color:var(--w);padding:.48rem .9rem;border-radius:8px;font-size:.83rem;cursor:pointer;font-family:'Noto Sans JP',sans-serif;}
-.fsel:focus{outline:none;border-color:var(--gold);}
-.finp{background:var(--navy);border:1px solid var(--nl);color:var(--w);padding:.48rem .9rem;border-radius:8px;font-size:.83rem;font-family:'Noto Sans JP',sans-serif;}
-.finp:focus{outline:none;border-color:var(--gold);}
-.fbtn2{background:linear-gradient(135deg,var(--gold),var(--gd));color:var(--navy);font-weight:700;font-size:.83rem;padding:.48rem 1.1rem;border-radius:8px;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;}
-/* KNOW */
-.kg{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.1rem;}
-.kc2{background:var(--nm);border:1px solid var(--nl);border-radius:12px;padding:1.4rem;transition:border-color .3s;}
-.kc2:hover{border-color:rgba(212,175,55,.4);}
-.ki{width:46px;height:46px;background:rgba(212,175,55,.1);border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;margin-bottom:.9rem;}
-.ktt{font-weight:700;font-size:.95rem;margin-bottom:.4rem;color:var(--gold);}
-/* FOOTER */
-footer{background:#060e1c;border-top:1px solid var(--nl);padding:2.5rem 1rem 1.2rem;}
-.fg2{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2rem;margin-bottom:2rem;max-width:1200px;margin-left:auto;margin-right:auto;}
-.fc2{}.fc2 h4{font-size:.83rem;font-weight:700;color:var(--gold);margin-bottom:.75rem;}
-.fc2 ul{list-style:none;}.fc2 ul li{margin-bottom:.45rem;}
-.fc2 ul li button{background:none;border:none;font-size:.8rem;color:var(--gr);cursor:pointer;font-family:'Noto Sans JP',sans-serif;padding:0;transition:color .2s;}
-.fc2 ul li button:hover{color:var(--gold);}
-.fw{background:rgba(230,57,70,.07);border:1px solid rgba(230,57,70,.2);border-radius:8px;padding:1rem;margin-bottom:1.3rem;max-width:1200px;margin-left:auto;margin-right:auto;}
-.fw h5{color:var(--red);font-size:.8rem;margin-bottom:.38rem;}
-.fw p{font-size:.73rem;color:var(--gr);line-height:1.7;}
-.fb5{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.5rem;max-width:1200px;margin:0 auto;}
-.fbc{font-size:.73rem;color:var(--gr);}
-.fbl{display:flex;gap:1rem;}
-.fbl button{background:none;border:none;font-size:.73rem;color:var(--gr);cursor:pointer;font-family:'Noto Sans JP',sans-serif;}
-.fbl button:hover{color:var(--gold);}
-@keyframes fadeInUp{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
-.fu{animation:fadeInUp .55s ease-out both;}
-.fu1{animation-delay:.1s;}.fu2{animation-delay:.2s;}.fu3{animation-delay:.3s;}
-@media(max-width:900px){.fg2{grid-template-columns:1fr 1fr;}.cw{grid-template-columns:1fr;}}
-@media(max-width:768px){nav{display:none;}.hbg{display:flex;}.mnav.open{display:flex;}}
-@media(max-width:480px){.fg2{grid-template-columns:1fr;}.hsts{gap:1.2rem;}}
+.rt th{font-size:.75rem;color:#8A9BB5;padding:.6rem .5rem;border-bottom:1px solid #162d55;text-align:left;}
+.rt td{padding:.65rem .5rem;border-bottom:1px solid #0F2040;font-size:.88rem;}
+.rt tr:hover td{background:rgba(212,175,55,.04);}
+.km{font-family:'Oswald',sans-serif;font-size:1.1rem;color:#D4AF37;letter-spacing:1px;}
+.rm{color:#FF8C00;font-weight:700;}
+.rn{color:#2DC653;font-weight:700;}
+.badge{display:inline-block;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.35);color:#D4AF37;font-size:.72rem;font-weight:700;padding:.2rem .7rem;border-radius:12px;margin-bottom:.5rem;}
+.note{font-size:.7rem;color:#8A9BB5;margin-top:.3rem;}
+.mb{display:inline-block;background:rgba(255,140,0,.15);border:1px solid rgba(255,140,0,.4);color:#FF8C00;font-size:.65rem;font-weight:700;padding:.1rem .45rem;border-radius:7px;margin-left:.4rem;}
+.ld{text-align:center;padding:2rem;color:#8A9BB5;}
+.er{text-align:center;padding:1.5rem;color:#E63946;font-size:.85rem;}
 </style>
 </head>
 <body>
-<div class="disc">⚠️ 当サイトの予想は参考情報です。舟券の購入は自己責任でお願いします。20歳未満の方の舟券購入は法律で禁止されています。</div>
-
-<!-- 廣瀬雅彦セクション -->
-<div style="background:linear-gradient(135deg,#0A1628 0%,#0F2040 100%);border-bottom:2px solid var(--gold);padding:2.5rem 1rem;">
-  <div class="C">
-    <div style="display:flex;align-items:center;gap:2rem;flex-wrap:wrap;justify-content:center;">
-      <div style="position:relative;flex-shrink:0;">
-        <img src="https://masahiko.site/hirose1.jpg" alt="廣瀬雅彦" style="width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid var(--gold);display:block;">
-        <div style="position:absolute;bottom:4px;right:4px;background:var(--gold);border-radius:50%;width:24px;height:24px;display:flex;align-items:center;justify-content:center;font-size:12px;">⛵</div>
-      </div>
-      <div style="text-align:center;">
-        <div style="font-size:.72rem;font-weight:700;letter-spacing:3px;color:var(--gold);text-transform:uppercase;margin-bottom:.4rem">AI HIROSE PRESENTS</div>
-        <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.4rem,4vw,2.2rem);font-weight:700;line-height:1.2;margin-bottom:.4rem">
-          <span style="color:var(--gold)">廣瀬雅彦</span><br>
-          人生勝ち道方程式サイト！
-        </h2>
-        <p style="font-size:.85rem;color:var(--gr);margin-bottom:.8rem">AI廣瀬が厳選する競艇予想まとめ — 毎日更新</p>
-        <a href="https://masahiko.site/" target="_blank" style="display:inline-flex;align-items:center;gap:6px;background:transparent;border:1px solid rgba(212,175,55,.5);color:var(--gold);font-size:.78rem;font-weight:700;padding:.35rem .9rem;border-radius:20px;text-decoration:none;transition:all .2s;">
-          🌐 廣瀬雅彦 公式サイトへ
-        </a>
-      </div>
+<div class="top-bar">
+  <div class="top-inner">
+    <img src="https://masahiko.site/hirose1.jpg" alt="廣瀬雅彦" class="pimg">
+    <div>
+      <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:#D4AF37;margin-bottom:.3rem">AI HIROSE PRESENTS</div>
+      <div class="stitle">廣瀬雅彦<br>人生勝ち道方程式サイト！</div>
+      <div class="ssub">ボートレース 払戻金結果 リアルタイム表示</div>
     </div>
   </div>
 </div>
-<header>
-  <div class="hi">
-    <div class="logo" onclick="go('top')">
-      <div class="li">⛵</div>
-      <div><span class="lt">BOAT NAVI</span><span class="ls">ボートレース予想サイト</span></div>
-    </div>
-    <nav>
-      <button class="nb on" id="n-top" onclick="go('top')">トップ</button>
-      <button class="nb" id="n-yosou" onclick="go('yosou')">無料予想</button>
-      <button class="nb" id="n-jik" onclick="go('jik')">的中実績</button>
-      <button class="nb mn" id="n-man" onclick="go('man')">🔥 万舟券</button>
-      <button class="nb" id="n-jyo" onclick="go('jyo')">競艇場一覧</button>
-      <button class="nb" id="n-know" onclick="go('know')">基礎知識</button>
-      <button class="nb" id="n-contact" onclick="go('contact')">お問い合わせ</button>
-      <button class="nb rg" onclick="alert('会員登録ページは準備中です。')">無料会員登録</button>
-    </nav>
-    <button class="hbg" onclick="document.getElementById('mn2').classList.toggle('open')"><span></span><span></span><span></span></button>
-  </div>
-  <div class="mnav" id="mn2">
-    <button onclick="go('top');document.getElementById('mn2').classList.remove('open')">🏠 トップ</button>
-    <button onclick="go('yosou');document.getElementById('mn2').classList.remove('open')">📋 無料予想</button>
-    <button onclick="go('jik');document.getElementById('mn2').classList.remove('open')">🏆 的中実績</button>
-    <button onclick="go('man');document.getElementById('mn2').classList.remove('open')" style="color:var(--ora);font-weight:700">🔥 万舟券</button>
-    <button onclick="go('jyo');document.getElementById('mn2').classList.remove('open')">🗾 競艇場一覧</button>
-    <button onclick="go('know');document.getElementById('mn2').classList.remove('open')">📚 基礎知識</button>
-    <button onclick="go('contact');document.getElementById('mn2').classList.remove('open')">✉️ お問い合わせ</button>
-    <button onclick="alert('会員登録ページは準備中です。')" style="color:var(--gold);font-weight:700">⭐ 無料会員登録</button>
-  </div>
-</header>
 
-<!-- TOP -->
-<div class="page active" id="page-top">
-<div class="hero">
-  <div class="C">
-    <div class="hbdg fu"><span class="ld"></span> 本日の予想 公開中</div>
-    <h1 class="fu fu1">競艇予想をもっと<br><span>スマートに。</span></h1>
-    <p class="hsub fu fu2">AIが毎日ボートレース最新情報を取得・更新。<br>無料予想・万舟券・的中実績をすべて公開。</p>
-    <div class="hsts fu fu2">
-      <div class="hst"><div class="hsn">68<span style="font-size:1rem">%</span></div><div class="hsl">直近30日的中率</div></div>
-      <div class="hst"><div class="hsn">142<span style="font-size:1rem">%</span></div><div class="hsl">月間回収率</div></div>
-      <div class="hst"><div class="hsn">142</div><div class="hsl">万舟券的中数</div></div>
-    </div>
-    <div class="hbtns fu fu3">
-      <button class="bp" onclick="go('yosou')">📋 本日の無料予想を見る</button>
-      <button class="bs" onclick="go('man')">🔥 万舟券実績</button>
-    </div>
+<div class="C">
+  <div class="card">
+    <div class="stl">📅 日付を選ぶ</div>
+    <div class="dtabs" id="dtabs"></div>
+    <div class="badge" id="badge">データ読み込み中...</div>
+    <div class="note">※ BoatraceOpenAPI使用（約30分遅延）非公式データです</div>
   </div>
-</div>
-<div class="S" style="background:var(--nm)"><div class="C">
-  <div style="text-align:center;margin-bottom:2.2rem">
-    <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.4rem">AI LIVE UPDATE</div>
-    <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;margin-bottom:.4rem">AIが取得した<span style="color:var(--gold)">最新レース情報</span></h2>
-    <p style="color:var(--gr);font-size:.87rem">ボートレース情報をAIがリアルタイムで分析・要約します</p>
-  </div>
-  <div class="ab">
-    <div class="ah"><span class="ad"></span><span class="al">AI LIVE — 本日のレース概況</span></div>
-    <div class="ao" id="o-top">ボタンを押すとAIが本日のボートレース開催場・注目レース・気象条件を分析します。</div>
-    <button class="fb3" id="b-top" onclick="ai('top')">🔄 AIで最新情報を取得する</button>
-  </div>
-</div></div>
-<div class="sb"><div class="sbi">
-  <div class="si"><div class="sn">68<span class="su">%</span></div><div class="sl2">今月の的中率</div></div>
-  <div class="si"><div class="sn">142<span class="su">%</span></div><div class="sl2">今月の回収率</div></div>
-  <div class="si"><div class="sn">5</div><div class="sl2">本日の公開予想数</div></div>
-  <div class="si"><div class="sn">2,400<span class="su">+</span></div><div class="sl2">登録会員数</div></div>
-</div></div>
-<div class="S"><div class="C">
-  <div style="text-align:center;margin-bottom:2.2rem">
-    <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.4rem">TODAY'S PICKS</div>
-    <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700">本日の<span style="color:var(--gold)">無料予想</span></h2>
-  </div>
-  <div class="pg">
-    <div class="pc"><div class="ph2"><div><div class="pj">🏟️ 住之江</div><div class="pr">第7R｜15:30発走</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">1-2-3</div><div class="pt">3連単 ／ 本命◎</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">1号艇の安定した助走距離と2号艇のターン技術が光る。インコースを主軸に手堅く攻める。</p></div><div class="pf"><span class="ptm">更新: 12:00</span><span class="rb rp">⏳ 結果待ち</span></div></div>
-    <div class="pc"><div class="ph2"><div><div class="pj">🏟️ 戸田</div><div class="pr">第9R｜16:10発走</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">2-1-4</div><div class="pt">3連単 ／ 穴◯</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">戸田特有のコース特性を考慮。2号艇が逃げ切る展開を想定。4号艇の台頭にも注目。</p></div><div class="pf"><span class="ptm">更新: 11:30</span><span class="rb rp">⏳ 結果待ち</span></div></div>
-    <div class="pc"><div class="ph2"><div><div class="pj">🏟️ 蒲郡</div><div class="pr">第6R｜14:50発走</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">1-3-2</div><div class="pt">3連単 ／ 本命◎</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">向かい風が収まる時間帯で1号艇有利の展開。3号艇のスタートタイミングが鍵。</p></div><div class="pf"><span class="ptm">更新: 10:45</span><span class="rb rw">✅ 的中 ¥8,400</span></div></div>
-  </div>
-  <div style="text-align:center;margin-top:1.8rem"><button class="bs" onclick="go('yosou')">すべての予想を見る →</button></div>
-</div></div>
-<div class="S" style="background:var(--nm)"><div class="C">
-  <div style="text-align:center;margin-bottom:2.2rem">
-    <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--gold);text-transform:uppercase;margin-bottom:.4rem">RESULTS</div>
-    <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700">最新<span style="color:var(--gold)">的中実績</span></h2>
-  </div>
-  <div class="jg">
-    <div class="jc"><div class="ji">🏆</div><div><div style="font-weight:700;font-size:.88rem">住之江 第5R</div><div style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--gold)">1-2-4</div><div style="font-size:.78rem;color:var(--green);font-weight:700">払戻 ¥12,400</div><div style="font-size:.7rem;color:var(--gr)">2025年5月9日</div></div></div>
-    <div class="jc"><div class="ji">🔥</div><div><div style="font-weight:700;font-size:.88rem">若松 第11R</div><div style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--gold)">5-3-1</div><div style="font-size:.78rem;color:var(--ora);font-weight:700">万舟 ¥142,300</div><div style="font-size:.7rem;color:var(--gr)">2025年4月28日</div></div></div>
-    <div class="jc"><div class="ji">🏆</div><div><div style="font-weight:700;font-size:.88rem">蒲郡 第8R</div><div style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--gold)">3-1-2</div><div style="font-size:.78rem;color:var(--green);font-weight:700">払戻 ¥8,700</div><div style="font-size:.7rem;color:var(--gr)">2025年5月9日</div></div></div>
-    <div class="jc"><div class="ji">🏆</div><div><div style="font-weight:700;font-size:.88rem">平和島 第7R</div><div style="font-family:'Oswald',sans-serif;font-size:1.25rem;color:var(--gold)">1-3-5</div><div style="font-size:.78rem;color:var(--green);font-weight:700">払戻 ¥6,200</div><div style="font-size:.7rem;color:var(--gr)">2025年5月8日</div></div></div>
-  </div>
-  <div style="text-align:center;margin-top:1.8rem"><button class="bs" onclick="go('jik')">的中実績一覧を見る →</button></div>
-</div></div>
-<div class="S"><div class="C"><div class="cta">
-  <h2 style="font-family:'Oswald',sans-serif;font-size:1.7rem;margin-bottom:.7rem">無料会員登録で<span style="color:var(--gold)">もっと便利に</span></h2>
-  <p style="color:var(--gr);font-size:.87rem;margin-bottom:1.3rem">登録無料。万舟券アラート・予想通知・的中履歴保存など便利な機能が使えます。</p>
-  <div style="display:flex;justify-content:center;gap:1.4rem;flex-wrap:wrap;margin-bottom:1.4rem">
-    <span style="font-size:.83rem;color:var(--gr)"><span style="color:var(--green);font-weight:700">✓</span> 万舟券アラート</span>
-    <span style="font-size:.83rem;color:var(--gr)"><span style="color:var(--green);font-weight:700">✓</span> 予想通知メール</span>
-    <span style="font-size:.83rem;color:var(--gr)"><span style="color:var(--green);font-weight:700">✓</span> 完全無料</span>
-  </div>
-  <button class="bp" onclick="alert('会員登録ページは準備中です。')">⭐ 無料で会員登録する</button>
-</div></div></div>
-</div>
 
-<!-- 無料予想 -->
-<div class="page" id="page-yosou">
-<div class="phero"><div class="C"><div class="pl">FREE PREDICTION</div><h1 class="ptl">無料<span>予想一覧</span></h1><p style="color:var(--gr);font-size:.87rem;margin-top:.38rem">競艇場・日付・結果でフィルタリングできます</p></div></div>
-<div class="fb4"><div class="fi">
-  <input type="date" class="finp" id="fd">
-  <select class="fsel" id="fj"><option value="">全競艇場</option><option>住之江</option><option>戸田</option><option>蒲郡</option><option>平和島</option><option>多摩川</option><option>若松</option><option>福岡</option></select>
-  <select class="fsel" id="fr"><option value="">全結果</option><option value="win">的中</option><option value="pending">結果待ち</option><option value="lose">不的中</option></select>
-  <button class="fbtn2" onclick="doFilter()">🔍 検索</button>
-</div></div>
-<div class="S" style="padding-bottom:0"><div class="C">
-  <div class="ab">
-    <div class="ah"><span class="ad"></span><span class="al">AI 予想アシスト</span></div>
-    <div class="ao" id="o-yosou">「AI予想を分析」ボタンを押すと、今日の開催場・気象条件を踏まえたAI予想コメントを生成します。</div>
-    <button class="fb3" id="b-yosou" onclick="ai('yosou')">🤖 AIで今日の予想を分析する</button>
+  <div class="card" id="jcard" style="display:none">
+    <div class="stl">🏟️ 競艇場を選ぶ</div>
+    <div class="jg" id="jgrid"></div>
   </div>
-</div></div>
-<div class="S"><div class="C"><div class="pg" id="yg">
-  <div class="pc" data-j="住之江" data-r="pending" data-d="2026-05-10"><div class="ph2"><div><div class="pj">🏟️ 住之江</div><div class="pr">第7R｜15:30｜2026.05.10</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">1-2-3</div><div class="pt">3連単 ／ 本命◎</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">1号艇の安定した助走距離と2号艇のターン技術が光る。インコースを主軸に手堅く攻める。</p></div><div class="pf"><span class="ptm">公開: 12:00</span><span class="rb rp">⏳ 結果待ち</span></div></div>
-  <div class="pc" data-j="戸田" data-r="pending" data-d="2026-05-10"><div class="ph2"><div><div class="pj">🏟️ 戸田</div><div class="pr">第9R｜16:10｜2026.05.10</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">2-1-4</div><div class="pt">3連単 ／ 穴◯</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">戸田特有のコース特性を考慮。2号艇が逃げ切る展開を想定。4号艇の台頭にも注目。</p></div><div class="pf"><span class="ptm">公開: 11:30</span><span class="rb rp">⏳ 結果待ち</span></div></div>
-  <div class="pc" data-j="蒲郡" data-r="win" data-d="2026-05-10"><div class="ph2"><div><div class="pj">🏟️ 蒲郡</div><div class="pr">第6R｜14:50｜2026.05.10</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">1-3-2</div><div class="pt">3連単 ／ 本命◎</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">向かい風が収まる時間帯で1号艇有利の展開。3号艇のスタートタイミングが鍵。</p></div><div class="pf"><span class="ptm">公開: 10:45</span><span class="rb rw">✅ 的中 ¥8,400</span></div></div>
-  <div class="pc" data-j="若松" data-r="pending" data-d="2026-05-10"><div class="ph2"><div><div class="pj">🏟️ 若松</div><div class="pr">第8R｜15:00｜2026.05.10</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">3-1-2</div><div class="pt">3連単 ／ 穴◯</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">若松は潮の影響が大きい競艇場。3号艇のモーター機力が好調で差し展開に期待。</p></div><div class="pf"><span class="ptm">公開: 10:00</span><span class="rb rp">⏳ 結果待ち</span></div></div>
-  <div class="pc" data-j="若松" data-r="win" data-d="2026-05-09"><div class="ph2"><div><div class="pj">🏟️ 若松</div><div class="pr">第11R｜17:00｜2026.05.09</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">5-3-1</div><div class="pt">3連単 ／ 大穴◎</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">5号艇の機力が直前整備で大幅アップ。スタート展示で鋭い伸びを確認した。</p></div><div class="pf"><span class="ptm">公開: 14:30</span><span class="rb rw">✅ 万舟 ¥142,300</span></div></div>
-  <div class="pc" data-j="福岡" data-r="pending" data-d="2026-05-10"><div class="ph2"><div><div class="pj">🏟️ 福岡</div><div class="pr">第5R｜13:50｜2026.05.10</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">1-3-4</div><div class="pt">3連単 ／ 本命◎</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">福岡は風の影響が少なく走りやすい水面。1号艇の峰選手が好調で本命視。</p></div><div class="pf"><span class="ptm">公開: 11:00</span><span class="rb rp">⏳ 結果待ち</span></div></div>
-  <div class="pc" data-j="福岡" data-r="win" data-d="2026-05-08"><div class="ph2"><div><div class="pj">🏟️ 福岡</div><div class="pr">第8R｜15:50｜2026.05.08</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">5-1-3</div><div class="pt">3連単 ／ 穴◯</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">5号艇のモーター機力が突出。好スタートから逃切りの展開を読んだ。</p></div><div class="pf"><span class="ptm">公開: 13:30</span><span class="rb rw">✅ 的中 ¥31,500</span></div></div>
-  <div class="pc" data-j="平和島" data-r="pending" data-d="2026-05-10"><div class="ph2"><div><div class="pj">🏟️ 平和島</div><div class="pr">第10R｜16:40｜2026.05.10</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">2-4-1</div><div class="pt">3連単 ／ 穴◯</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">平和島は風の影響を受けやすい。向かい風でアウトコースが台頭する展開を予想。</p></div><div class="pf"><span class="ptm">公開: 12:30</span><span class="rb rp">⏳ 結果待ち</span></div></div>
-  <div class="pc" data-j="平和島" data-r="lose" data-d="2026-05-09"><div class="ph2"><div><div class="pj">🏟️ 平和島</div><div class="pr">第11R｜17:30｜2026.05.09</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">3-1-2</div><div class="pt">3連単 ／ 穴◯</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">3号艇のモーター優位性を重視。スタートで先行できれば面白い展開に。</p></div><div class="pf"><span class="ptm">公開: 14:00</span><span class="rb rl">❌ 不的中</span></div></div>
-  <div class="pc" data-j="多摩川" data-r="win" data-d="2026-05-10"><div class="ph2"><div><div class="pj">🏟️ 多摩川</div><div class="pr">第7R｜15:20｜2026.05.10</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">1-2-5</div><div class="pt">3連単 ／ 本命◎</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">多摩川は静水面でインが強い。1号艇の逃げ切りに2号艇が続く展開を本命視。</p></div><div class="pf"><span class="ptm">公開: 11:45</span><span class="rb rw">✅ 的中 ¥6,800</span></div></div>
-  <div class="pc" data-j="多摩川" data-r="pending" data-d="2026-05-09"><div class="ph2"><div><div class="pj">🏟️ 多摩川</div><div class="pr">第9R｜16:00｜2026.05.09</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">4-2-1</div><div class="pt">3連単 ／ 穴◯</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">4号艇のスタート力が高く捲り差しに期待。静水面で実力差が出やすい一戦。</p></div><div class="pf"><span class="ptm">公開: 13:00</span><span class="rb rp">⏳ 結果待ち</span></div></div>
-  <div class="pc" data-j="住之江" data-r="win" data-d="2026-05-09"><div class="ph2"><div><div class="pj">🏟️ 住之江</div><div class="pr">第5R｜14:00｜2026.05.09</div></div><span class="pgr">無料</span></div><div class="pb"><div class="pk">1-2-4</div><div class="pt">3連単 ／ 本命◎</div><p style="font-size:.8rem;color:var(--gr);line-height:1.65">1号艇の道中巧みなターンに期待。4号艇がまくり気味に来る展開も視野に入れた。</p></div><div class="pf"><span class="ptm">公開: 11:00</span><span class="rb rw">✅ 的中 ¥12,400</span></div></div>
-</div></div></div>
-</div>
 
-<!-- 的中実績 -->
-<div class="page" id="page-jik">
-<div class="phero"><div class="C"><div class="pl">RESULTS</div><h1 class="ptl">的中<span>実績</span></h1><p style="color:var(--gr);font-size:.87rem;margin-top:.38rem">すべての予想結果を透明公開。的中率・回収率もリアルタイムで更新。</p></div></div>
-<div class="S"><div class="C">
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:1rem;margin-bottom:2rem">
-    <div style="background:var(--nm);border:1px solid rgba(212,175,55,.4);border-radius:12px;padding:1.3rem;text-align:center"><div style="font-family:'Oswald',sans-serif;font-size:2.3rem;font-weight:700;color:var(--gold)">68%</div><div style="font-size:.78rem;color:var(--gr)">今月の的中率</div></div>
-    <div style="background:var(--nm);border:1px solid rgba(45,198,83,.4);border-radius:12px;padding:1.3rem;text-align:center"><div style="font-family:'Oswald',sans-serif;font-size:2.3rem;font-weight:700;color:var(--green)">142%</div><div style="font-size:.78rem;color:var(--gr)">今月の回収率</div></div>
-    <div style="background:var(--nm);border:1px solid var(--nl);border-radius:12px;padding:1.3rem;text-align:center"><div style="font-family:'Oswald',sans-serif;font-size:2.3rem;font-weight:700;color:var(--gold)">34</div><div style="font-size:.78rem;color:var(--gr)">今月の的中本数</div></div>
-    <div style="background:var(--nm);border:1px solid var(--nl);border-radius:12px;padding:1.3rem;text-align:center"><div style="font-family:'Oswald',sans-serif;font-size:2.3rem;font-weight:700;color:var(--gold)">63%</div><div style="font-size:.78rem;color:var(--gr)">累計的中率</div></div>
-  </div>
-  <div class="cw">
-    <div class="cc"><div class="ct2">📈 月別的中率</div>
-      <div class="br"><span class="bl">12月</span><div class="bt"><div class="bfl" style="width:58%"></div></div><span class="bv">58%</span></div>
-      <div class="br"><span class="bl">1月</span><div class="bt"><div class="bfl" style="width:62%"></div></div><span class="bv">62%</span></div>
-      <div class="br"><span class="bl">2月</span><div class="bt"><div class="bfl" style="width:65%"></div></div><span class="bv">65%</span></div>
-      <div class="br"><span class="bl">3月</span><div class="bt"><div class="bfl" style="width:60%"></div></div><span class="bv">60%</span></div>
-      <div class="br"><span class="bl">4月</span><div class="bt"><div class="bfl" style="width:70%"></div></div><span class="bv">70%</span></div>
-      <div class="br"><span class="bl">5月</span><div class="bt"><div class="bfl" style="width:68%"></div></div><span class="bv">68%</span></div>
-    </div>
-    <div class="cc"><div class="ct2">🏟️ 競艇場別的中率</div>
-      <div class="br"><span class="bl">住之江</span><div class="bt"><div class="bfl g" style="width:72%"></div></div><span class="bv">72%</span></div>
-      <div class="br"><span class="bl">蒲郡</span><div class="bt"><div class="bfl g" style="width:68%"></div></div><span class="bv">68%</span></div>
-      <div class="br"><span class="bl">戸田</span><div class="bt"><div class="bfl g" style="width:65%"></div></div><span class="bv">65%</span></div>
-      <div class="br"><span class="bl">若松</span><div class="bt"><div class="bfl g" style="width:70%"></div></div><span class="bv">70%</span></div>
-      <div class="br"><span class="bl">平和島</span><div class="bt"><div class="bfl g" style="width:58%"></div></div><span class="bv">58%</span></div>
-    </div>
-  </div>
-  <div style="overflow-x:auto">
-    <table class="rt">
-      <thead><tr><th>日付</th><th>競艇場</th><th>R</th><th>買い目</th><th>種別</th><th>結果</th><th>払戻</th></tr></thead>
-      <tbody>
-        <tr><td>2025.05.10</td><td>蒲郡</td><td>6R</td><td class="kc">1-3-2</td><td>3連単</td><td><span class="rb rw">✅ 的中</span></td><td class="rfc">¥8,400</td></tr>
-        <tr><td>2025.05.09</td><td>住之江</td><td>5R</td><td class="kc">1-2-4</td><td>3連単</td><td><span class="rb rw">✅ 的中</span></td><td class="rfc">¥12,400</td></tr>
-        <tr><td>2025.05.09</td><td>平和島</td><td>11R</td><td class="kc">3-1-2</td><td>3連単</td><td><span class="rb rl">❌ 不的中</span></td><td>—</td></tr>
-        <tr><td>2025.05.08</td><td>蒲郡</td><td>8R</td><td class="kc">3-1-2</td><td>3連単</td><td><span class="rb rw">✅ 的中</span></td><td class="rfc">¥8,700</td></tr>
-        <tr><td>2025.04.28</td><td>若松</td><td>11R</td><td class="kc">5-3-1</td><td>3連単</td><td><span class="rb rw" style="color:var(--ora);border-color:rgba(255,140,0,.4);background:rgba(255,140,0,.15)">🔥 万舟</span></td><td style="color:var(--ora);font-weight:700">¥142,300</td></tr>
-        <tr><td>2025.05.08</td><td>戸田</td><td>11R</td><td class="kc">2-4-1</td><td>3連単</td><td><span class="rb rw">✅ 的中</span></td><td class="rfc">¥24,300</td></tr>
-        <tr><td>2025.05.07</td><td>平和島</td><td>7R</td><td class="kc">1-3-5</td><td>3連単</td><td><span class="rb rw">✅ 的中</span></td><td class="rfc">¥6,200</td></tr>
-      </tbody>
-    </table>
-  </div>
-</div></div>
-</div>
-
-<!-- 万舟券 -->
-<div class="page" id="page-man">
-<div class="mhero">
-  <div class="C" style="position:relative;z-index:1">
-    <div style="font-size:2.8rem;animation:flt 2s ease-in-out infinite;display:inline-block;margin-bottom:.8rem">🔥</div>
-    <h1><span class="msh">万舟券</span><br>的中実績</h1>
-    <p>払戻1万円以上の高配当的中をすべて公開。AIが万舟情報をリアルタイムで分析します。</p>
-    <div class="msts">
-      <div class="hst"><div class="hsn" style="color:var(--ora)">142<span style="font-size:1rem">本</span></div><div class="hsl">累計万舟的中数</div></div>
-      <div class="hst"><div class="hsn" style="color:var(--ora)">¥142,300</div><div class="hsl">最高配当</div></div>
-      <div class="hst"><div class="hsn" style="color:var(--ora)">¥28,400</div><div class="hsl">平均払戻金額</div></div>
-      <div class="hst"><div class="hsn" style="color:var(--ora)">31<span style="font-size:1rem">%</span></div><div class="hsl">穴予想的中率</div></div>
-    </div>
-    <button class="bf2" onclick="go('yosou')">🔥 今日の穴予想を見る</button>
+  <div class="card" id="rcard" style="display:none">
+    <div class="stl">🏆 <span id="rtitle">払戻金結果</span></div>
+    <div class="sg" id="sgrid"></div>
+    <div id="rarea"></div>
   </div>
 </div>
-<div class="S ms"><div class="C" style="position:relative;z-index:1">
-  <div class="ab" style="border-color:rgba(255,140,0,.4);background:rgba(26,8,0,.6)">
-    <div class="ah"><span class="ad" style="background:var(--ora)"></span><span class="al" style="color:var(--ora)">AI 万舟アシスト — 高配当レース分析</span></div>
-    <div class="ao" id="o-man">「AI万舟分析を実行」ボタンを押すと、今日の開催場から波乱が起きやすいレースをAIが分析します。</div>
-    <button class="fb3" id="b-man" onclick="ai('man')" style="border-color:rgba(255,140,0,.4);color:var(--ora)">🔥 AI万舟分析を実行する</button>
-  </div>
-  <div class="kwr"><span class="kwt">#万舟券</span><span class="kwt">#競艇高配当</span><span class="kwt">#ボートレース万舟</span><span class="kwt">#大穴予想</span><span class="kwt">#3連単高配当</span><span class="kwt">#穴狙い</span><span class="kwt">#払戻1万円以上</span></div>
-  <div style="font-size:.72rem;font-weight:700;letter-spacing:2px;color:var(--ora);text-transform:uppercase;margin-bottom:.4rem">🏆 BEST HIT</div>
-  <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;margin-bottom:1.3rem"><span style="color:var(--ora)">最高配当</span>万舟券</h2>
-  <div class="bwc">
-    <div class="bwcr">🏆 歴代最高配当 No.1</div>
-    <div class="bwct">
-      <div><div style="font-size:1.05rem;font-weight:700;margin-bottom:.25rem">🏟️ 若松競艇場 第11レース</div><div style="font-size:.8rem;color:var(--gr)">2025年4月28日（月）｜SGクラシック決定戦</div></div>
-      <div><div class="bwcrl">💰 払戻金額</div><div class="bwcrn">¥142,300</div></div>
-    </div>
-    <div class="bwcrow"><div><div style="font-size:.7rem;color:var(--gr)">買い目</div><div class="bwck">5-3-1</div></div><div class="bwctp">3連単</div><div class="bwctp">大穴◎</div></div>
-    <p style="font-size:.83rem;color:var(--gr);line-height:1.75">5号艇の機力が直前整備で大幅アップ。スタート展示で鋭い伸びを確認。3号艇との連携で差し展開を読み切った。SG戦では1号艇が番手ダウンしやすい特性を活かし、波乱を見越した大本命穴狙いが炸裂した会心の一本。</p>
-  </div>
-  <h2 style="font-family:'Oswald',sans-serif;font-size:clamp(1.5rem,3.5vw,2rem);font-weight:700;margin-bottom:1.2rem">万舟券<span style="color:var(--ora)">全実績</span></h2>
-  <div class="mg">
-    <div class="mc"><div class="mct"><div><div style="font-weight:700;font-size:.9rem">🏟️ 住之江</div><div style="font-size:.72rem;color:var(--gr)">第9R｜2025.05.02</div></div><span class="mb2">万舟💥</span></div><div class="mkm">4-6-2</div><div style="font-size:.7rem;color:var(--gr);margin-bottom:.6rem">3連単 ／ 大穴◎</div><div class="mrf">💰 払戻 ¥87,600</div><div class="mdt">4号艇の捲り差しが炸裂。6号艇の粘りも光る。</div></div>
-    <div class="mc"><div class="mct"><div><div style="font-weight:700;font-size:.9rem">🏟️ 戸田</div><div style="font-size:.72rem;color:var(--gr)">第7R｜2025.04.22</div></div><span class="mb2">万舟💥</span></div><div class="mkm">6-2-4</div><div style="font-size:.7rem;color:var(--gr);margin-bottom:.6rem">3連単 ／ 大穴◎</div><div class="mrf">💰 払戻 ¥63,200</div><div class="mdt">6号艇が大外まくりを炸裂。戸田特有の荒れ展開。</div></div>
-    <div class="mc"><div class="mct"><div><div style="font-weight:700;font-size:.9rem">🏟️ 蒲郡</div><div style="font-size:.72rem;color:var(--gr)">第12R｜2025.04.15</div></div><span class="mb2">万舟💥</span></div><div class="mkm">3-5-6</div><div style="font-size:.7rem;color:var(--gr);margin-bottom:.6rem">3連単 ／ 穴◯</div><div class="mrf">💰 払戻 ¥44,800</div><div class="mdt">向かい風でイン不利。3号艇のダッシュが決まる。</div></div>
-    <div class="mc"><div class="mct"><div><div style="font-weight:700;font-size:.9rem">🏟️ 福岡</div><div style="font-size:.72rem;color:var(--gr)">第8R｜2025.04.09</div></div><span class="mb2">万舟💥</span></div><div class="mkm">5-1-3</div><div style="font-size:.7rem;color:var(--gr);margin-bottom:.6rem">3連単 ／ 穴◯</div><div class="mrf">💰 払戻 ¥31,500</div><div class="mdt">5号艇のモーター機力が突出。好スタートから逃切り。</div></div>
-    <div class="mc"><div class="mct"><div><div style="font-weight:700;font-size:.9rem">🏟️ 丸亀</div><div style="font-size:.72rem;color:var(--gr)">第10R｜2025.04.03</div></div><span class="mb2">万舟💥</span></div><div class="mkm">4-2-6</div><div style="font-size:.7rem;color:var(--gr);margin-bottom:.6rem">3連単 ／ 大穴◎</div><div class="mrf">💰 払戻 ¥28,900</div><div class="mdt">海面コンディションが4号艇に追い風となった。</div></div>
-    <div class="mc"><div class="mct"><div><div style="font-weight:700;font-size:.9rem">🏟️ 住之江</div><div style="font-size:.72rem;color:var(--gr)">第7R｜2025.02.22</div></div><span class="mb2">万舟💥</span></div><div class="mkm">5-2-6</div><div style="font-size:.7rem;color:var(--gr);margin-bottom:.6rem">3連単 ／ 大穴◎</div><div class="mrf">💰 払戻 ¥71,400</div><div class="mdt">5号艇の大まくりが炸裂した衝撃の一戦。</div></div>
-  </div>
-</div></div>
-</div>
-
-<!-- 競艇場一覧 -->
-<div class="page" id="page-jyo">
-<div class="phero"><div class="C"><div class="pl">VENUES</div><h1 class="ptl"><span>競艇場</span>一覧</h1><p style="color:var(--gr);font-size:.87rem;margin-top:.38rem">全国24競艇場の特徴・攻略情報</p></div></div>
-<div class="S"><div class="C">
-  <div class="ab" style="margin-bottom:2rem">
-    <div class="ah"><span class="ad"></span><span class="al">AI 競艇場分析 — 本日の開催場情報</span></div>
-    <div class="ao" id="o-jyo">「AI分析を実行」ボタンを押すと、今日の開催競艇場の天候・水面状況・特徴をAIが解説します。</div>
-    <button class="fb3" id="b-jyo" onclick="ai('jyo')">🏟️ AI競艇場分析を実行する</button>
-  </div>
-  <div class="yg">
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">戸田</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">埼玉県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">平和島</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">東京都</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">多摩川</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">東京都</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">江戸川</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">東京都</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">桐生</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">群馬県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">浜名湖</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">静岡県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">蒲郡</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">愛知県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">常滑</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">愛知県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">津</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">三重県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">三国</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">福井県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">琵琶湖</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">滋賀県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">住之江</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">大阪府</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">尼崎</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">兵庫県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">鳴門</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">徳島県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">丸亀</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">香川県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">児島</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">岡山県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">宮島</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">広島県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">徳山</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">山口県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">下関</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">山口県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">若松</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">福岡県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">芦屋</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">福岡県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">福岡</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">福岡県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">唐津</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">佐賀県</div></div>
-    <div class="yc"><div style="font-size:1.4rem;margin-bottom:.35rem">⛵</div><div style="font-weight:700;font-size:.87rem">大村</div><div style="font-size:.68rem;color:var(--gr);margin-top:.15rem">長崎県</div></div>
-  </div>
-</div></div>
-</div>
-
-<!-- 基礎知識 -->
-<div class="page" id="page-know">
-<div class="phero"><div class="C"><div class="pl">KNOWLEDGE</div><h1 class="ptl">競艇<span>基礎知識</span></h1><p style="color:var(--gr);font-size:.87rem;margin-top:.38rem">初心者でも安心。ボートレースの基本から万舟券まで学べます。</p></div></div>
-<div class="S"><div class="C"><div class="kg">
-  <div class="kc2"><div class="ki">🎯</div><div class="ktt">舟券の種類</div><p style="font-size:.8rem;color:var(--gr);line-height:1.7">単勝・複勝・2連単・2連複・3連単・3連複・拡連複など、様々な賭け方があります。初心者には複勝や2連複がおすすめです。</p></div>
-  <div class="kc2"><div class="ki">📊</div><div class="ktt">出走表の見方</div><p style="font-size:.8rem;color:var(--gr);line-height:1.7">選手のモーター機力・勝率・コース別成績などを確認しましょう。F（フライング）持ちの選手は慎重なスタートになりがちです。</p></div>
-  <div class="kc2"><div class="ki">🏁</div><div class="ktt">コースとレース展開</div><p style="font-size:.8rem;color:var(--gr);line-height:1.7">1号艇はイン有利のため勝率が高い傾向があります。スタートタイムやモーター差によって展開は大きく変わります。</p></div>
-  <div class="kc2"><div class="ki">💨</div><div class="ktt">天候・水面の影響</div><p style="font-size:.8rem;color:var(--gr);line-height:1.7">風向き・波の状態によってレース展開が変化します。向かい風ではインが有利になりやすく、追い風では差しが決まりやすくなります。</p></div>
-  <div class="kc2"><div class="ki">🔥</div><div class="ktt">万舟券の狙い方</div><p style="font-size:.8rem;color:var(--gr);line-height:1.7">万舟券（払戻1万円以上）は3〜6号艇が絡む波乱展開で生まれます。強風・荒れ水面・モーター格差の大きいレースで出やすい傾向があります。</p></div>
-  <div class="kc2"><div class="ki">💡</div><div class="ktt">予想のコツ</div><p style="font-size:.8rem;color:var(--gr);line-height:1.7">モーター2連率・選手の近況成績・コース別勝率を組み合わせて分析しましょう。当サイトのAI予想解説も参考にしてください。</p></div>
-</div></div></div>
-</div>
-
-<!-- お問い合わせ -->
-<div class="page" id="page-contact">
-<div class="phero"><div class="C"><div class="pl">CONTACT</div><h1 class="ptl">お<span>問い合わせ</span></h1><p style="color:var(--gr);font-size:.87rem;margin-top:.38rem">ご質問・ご意見はこちらから。2営業日以内にご返信します。</p></div></div>
-<div class="S"><div class="fc3">
-  <form id="cf" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <div class="fg"><label>お名前<span class="req">必須</span></label><input type="text" name="name" placeholder="山田 太郎" required></div>
-    <div class="fg"><label>メールアドレス<span class="req">必須</span></label><input type="email" name="email" placeholder="example@email.com" required></div>
-    <div class="fg"><label>お問い合わせ種別</label><select name="category"><option>予想に関するご質問</option><option>万舟券・高配当について</option><option>会員登録・ログインについて</option><option>サイトのご要望・ご意見</option><option>その他</option></select></div>
-    <div class="fg"><label>お問い合わせ内容<span class="req">必須</span></label><textarea name="message" placeholder="お問い合わせ内容を詳しくご記載ください" required></textarea></div>
-    <button type="submit" class="sbtn">✉️ 送信する</button>
-    <p style="font-size:.75rem;color:var(--gr);text-align:center;margin-top:.9rem">送信いただいた個人情報は、お問い合わせへの返答のみに使用します。</p>
-  </form>
-  <div class="suc" id="sm"><h3 style="color:var(--green);margin-bottom:.4rem">✅ 送信完了しました！</h3><p style="font-size:.83rem;color:var(--gr)">お問い合わせありがとうございます。2営業日以内にご返信いたします。</p></div>
-</div></div>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="fg2">
-    <div><span style="font-family:'Oswald',sans-serif;font-size:1.2rem;color:var(--gold);display:block;margin-bottom:.5rem">BOAT NAVI</span><p style="font-size:.78rem;color:var(--gr);line-height:1.7">競艇（ボートレース）の無料予想・万舟券・的中実績をAIがリアルタイムで更新。予想は参考情報です。舟券の購入は自己責任でお願いします。</p></div>
-    <div class="fc2"><h4>予想・実績</h4><ul><li><button onclick="go('yosou')">無料予想一覧</button></li><li><button onclick="go('jik')">的中実績</button></li><li><button onclick="go('man')" style="color:var(--ora)">🔥 万舟券実績</button></li></ul></div>
-    <div class="fc2"><h4>競艇情報</h4><ul><li><button onclick="go('jyo')">競艇場一覧</button></li><li><button onclick="go('know')">基礎知識</button></li></ul></div>
-    <div class="fc2"><h4>サポート</h4><ul><li><button onclick="go('contact')">お問い合わせ</button></li><li><button onclick="alert('準備中です。')">プライバシーポリシー</button></li><li><button onclick="alert('準備中です。')">利用規約</button></li></ul></div>
-  </div>
-  <div class="fw"><h5>⚠️ ギャンブル等依存症に関する注意</h5><p>競艇（ボートレース）はギャンブルです。当サイトの予想はあくまで参考情報であり、的中を保証するものではありません。「必ず勝てる」「投資として活用できる」などの表現は一切しておりません。ギャンブル依存症が疑われる方は専門窓口にご相談ください。20歳未満の方の舟券購入は法律で禁止されています。</p></div>
-  <div class="fb5"><div class="fbc">© 2025 BOAT NAVI. All rights reserved.</div><div class="fbl"><button onclick="alert('準備中です。')">プライバシーポリシー</button><button onclick="alert('準備中です。')">利用規約</button><button onclick="go('contact')">お問い合わせ</button></div></div>
-</footer>
 
 <script>
-function go(name){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.querySelectorAll('.nb').forEach(b=>b.classList.remove('on'));
-  document.getElementById('page-'+name).classList.add('active');
-  var nb=document.getElementById('n-'+name);
-  if(nb)nb.classList.add('on');
-  window.scrollTo(0,0);
+const JN={'01':'桐生','02':'戸田','03':'江戸川','04':'平和島','05':'多摩川','06':'浜名湖','07':'蒲郡','08':'常滑','09':'津','10':'三国','11':'びわこ','12':'住之江','13':'尼崎','14':'鳴門','15':'丸亀','16':'児島','17':'宮島','18':'徳山','19':'下関','20':'若松','21':'芦屋','22':'福岡','23':'唐津','24':'大村'};
+
+let gData=null;
+
+function buildTabs(){
+  const el=document.getElementById('dtabs');
+  const labels=['今日','昨日','2日前'];
+  el.innerHTML=labels.map((lb,i)=>{
+    const d=new Date(); d.setDate(d.getDate()-i);
+    const ds=d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');
+    const dp=`${d.getMonth()+1}/${d.getDate()}(${'日月火水木金土'[d.getDay()]})`;
+    return `<button class="dtab${i===1?' active':''}" onclick="load('${ds}','${dp}',this)">${lb} ${dp}</button>`;
+  }).join('');
+  // 昨日を初期ロード
+  const y=new Date(); y.setDate(y.getDate()-1);
+  const yd=y.getFullYear()+String(y.getMonth()+1).padStart(2,'0')+String(y.getDate()).padStart(2,'0');
+  const yp=`${y.getMonth()+1}/${y.getDate()}`;
+  load(yd,yp,null);
 }
-function doFilter(){
-  var d=document.getElementById('fd').value;
-  var j=document.getElementById('fj').value;
-  var r=document.getElementById('fr').value;
-  var count=0;
-  document.querySelectorAll('#yg .pc').forEach(function(c){
-    var ok=(!d||c.dataset.d===d)&&(!j||c.dataset.j===j)&&(!r||c.dataset.r===r);
-    c.style.display=ok?'':'none';
-    if(ok)count++;
-  });
-  var msg=document.getElementById('no-result');
-  if(!msg){
-    msg=document.createElement('div');
-    msg.id='no-result';
-    msg.style.cssText='grid-column:1/-1;text-align:center;padding:3rem;color:var(--gr);font-size:.9rem;';
-    document.getElementById('yg').appendChild(msg);
-  }
-  msg.style.display=count===0?'block':'none';
-  msg.innerHTML=count===0?'<div style="font-size:2rem;margin-bottom:.8rem">🔍</div>該当する予想が見つかりませんでした。<br><span style="font-size:.8rem">条件を変えて再検索してください。</span>':'';
-}
-document.getElementById('cf').addEventListener('submit',function(e){
-  if(this.action.indexOf('YOUR_FORM_ID')>-1){
-    e.preventDefault();
-    this.style.display='none';
-    document.getElementById('sm').classList.add('show');
-  }
-});
-var today=new Date().toLocaleDateString('ja-JP');
-var PROMPTS={
-  top:'あなたは競艇（ボートレース）の専門アナリストです。リアルタイムデータがなくても、競艇の専門知識に基づいて以下を日本語で具体的に回答してください：\n1. 全国24競艇場のうち本日開催が多い季節・曜日の傾向（住之江・戸田・蒲郡・平和島・若松などを例示）\n2. この時期（5月）の天候・水面コンディションの一般的な傾向と注意点\n3. 現在注目のトップ選手3名（峰竜太・井口佳典・毒島誠など）の最近の傾向と狙い目\n4. 今日のレース全体で荒れやすい条件・堅くなりやすい条件\n※末尾に「参考情報です。舟券購入は自己責任でお願いします。」と記載してください。',
-  yosou:'あなたは競艇予想アナリストです。リアルタイムデータがなくても、競艇の専門知識に基づいて以下を日本語で具体的に回答してください：\n1. 住之江・戸田・蒲郡・平和島・若松などで本日開催されると想定したレースの予想コメント（競艇場・推奨買い目・理由を具体的に）\n2. 5月の季節特性から穴が出やすいレースパターンの解説\n3. モーター機力・スタートタイミング・コース特性で今日注意すべきポイント\n4. 本日の推奨買い目3点（例：住之江なら1-2-4、戸田なら2-1-3など具体的に）\n※末尾に「本情報は参考です。舟券購入は自己責任でお願いします。」と記載してください。',
-  man:'あなたは競艇万舟券専門アナリストです。リアルタイムデータがなくても、競艇の専門知識に基づいて以下を日本語で具体的に回答してください：\n1. 万舟券（払戻1万円以上）が出やすい具体的な条件（向かい風・荒れ水面・B級選手混在など）\n2. 5月の季節柄、万舟が出やすい競艇場ランキングTOP3とその理由\n3. 今日万舟を狙うなら具体的にどの競艇場・何号艇の組み合わせが面白いか（3パターン例示）\n4. 万舟券を効率よく狙うフォーメーションの組み方\n※末尾に「高配当は的中保証ではありません。舟券購入は自己責任でお願いします。」と記載してください。',
-  jyo:'あなたは競艇場専門アナリストです。リアルタイムデータがなくても、競艇の専門知識に基づいて以下を日本語で具体的に回答してください：\n1. 住之江・戸田・蒲郡・平和島・若松・福岡の各場の特徴・コース特性を詳しく解説\n2. 5月の時期における各競艇場の天候・水面コンディションの傾向\n3. それぞれの場でイン・アウトどちらが有利か、狙い目のコース番号\n4. 初心者が予想しやすい競艇場ランキングとその理由\n※末尾に「本情報は参考です。舟券購入は自己責任でお願いします。」と記載してください。'
-};
-async function ai(type){
-  var o=document.getElementById('o-'+type);
-  var b=document.getElementById('b-'+type);
-  if(!o||!b)return;
-  b.disabled=true;
-  b.textContent='🔄 AI分析中...';
-  o.textContent='分析中です。しばらくお待ちください...';
+
+async function load(ds,dp,btn){
+  if(btn){document.querySelectorAll('.dtab').forEach(t=>t.classList.remove('active'));btn.classList.add('active');}
+  gData=null;
+  document.getElementById('badge').textContent=`${dp} のデータを取得中...`;
+  document.getElementById('badge').style.color='';
+  document.getElementById('jcard').style.display='none';
+  document.getElementById('rcard').style.display='none';
   try{
-    var res=await fetch('https://api.anthropic.com/v1/messages',{
-      method:'POST',
-      headers:{
-        'Content-Type':'application/json',
-        'x-api-key':['sk-ant-api03-i2_k6VS-q4dXkjNhFfd9Jwu2blsM2ZW13u1TRpL_C2e29kYOKL6DSX5qH','W178TDZUrXRhhd2m43Hvz8-Ik1Yig-Fw1NwAAA'].join(''),
-        'anthropic-version':'2023-06-01',
-        'anthropic-dangerous-direct-browser-access':'true'
-      },
-      body:JSON.stringify({model:'claude-sonnet-4-5',max_tokens:1000,messages:[{role:'user',content:PROMPTS[type]}]})
-    });
-    if(!res.ok){var err=await res.json();throw new Error(err.error&&err.error.message?err.error.message:'HTTP '+res.status);}
-    var data=await res.json();
-    var txt=data.content&&data.content.find(function(c){return c.type==='text';})?data.content.find(function(c){return c.type==='text';}).text:'応答が空です。';
-    o.textContent=txt;
-    var note=document.createElement('div');
-    note.style.cssText='font-size:.68rem;color:var(--gr);margin-top:.7rem;border-top:1px solid var(--nl);padding-top:.5rem';
-    note.textContent='最終更新: '+new Date().toLocaleTimeString('ja-JP')+' — AIによる自動生成コンテンツです。';
-    o.parentNode.appendChild(note);
-    b.textContent='🔄 再取得する';
-    b.disabled=false;
+    const yr=ds.substring(0,4);
+    const r=await fetch(`https://boatraceopenapi.github.io/results/v3/${yr}/${ds}.json`);
+    if(!r.ok) throw new Error(`${dp} のデータはまだありません`);
+    gData=await r.json();
+    buildJyo(gData,dp);
   }catch(e){
-    o.innerHTML='<span style="color:var(--red)">⚠️ 取得エラー: '+e.message+'</span><br><span style="font-size:.78rem;color:var(--gr)">※ GitHub Pagesに公開後にご利用ください。ローカルファイルでは動作しません。</span>';
-    b.textContent='🔄 再試行する';
-    b.disabled=false;
+    document.getElementById('badge').textContent=e.message;
+    document.getElementById('badge').style.color='#E63946';
   }
 }
+
+function buildJyo(data,dp){
+  const res=data.results||[];
+  const jm={};
+  res.forEach(r=>{const j=String(r.race_stadium_number).padStart(2,'0');if(!jm[j])jm[j]=[];jm[j].push(r);});
+  document.getElementById('badge').textContent=`${dp} — ${Object.keys(jm).length}場開催 / ${res.length}レース`;
+  const g=document.getElementById('jgrid');
+  g.innerHTML=Object.entries(jm).map(([j,rs])=>`<div class="jc" onclick="showR('${j}','${JN[j]||j}',this)"><div style="font-size:1.3rem;margin-bottom:.25rem">⛵</div><div class="jn">${JN[j]||j}</div><div class="jcnt">${rs.length}R</div></div>`).join('');
+  document.getElementById('jcard').style.display='block';
+}
+
+function showR(jcd,name,el){
+  document.querySelectorAll('.jc').forEach(c=>c.classList.remove('on'));
+  el.classList.add('on');
+  if(!gData)return;
+  const res=(gData.results||[]).filter(r=>String(r.race_stadium_number).padStart(2,'0')===jcd);
+  document.getElementById('rtitle').textContent=`${name} の払戻金結果`;
+  document.getElementById('rcard').style.display='block';
+  document.getElementById('rcard').scrollIntoView({behavior:'smooth'});
+
+  const rows=[];
+  res.forEach(r=>{
+    const rno=r.race_number;
+    const pays=r.payoffs||r.race_payoffs||[];
+    pays.forEach(p=>{
+      const bm=p.betting_method||p.type||'';
+      const bmn=p.betting_method_name||p.type_name||'';
+      if(bm===8||bmn==='3連単'||bmn==='trifecta'||String(bm).includes('8')){
+        rows.push({race:rno,km:p.combination||p.winning_combination||'—',ref:parseInt(p.payout||p.amount||0)});
+      }
+    });
+    if(!pays.length){
+      const top3=(r.race_results||[]).slice(0,3).map(x=>x.boat_number).join('-');
+      rows.push({race:rno,km:top3||'—',ref:0});
+    }
+  });
+
+  const mc=rows.filter(r=>r.ref>=10000).length;
+  const mx=rows.length?Math.max(...rows.map(r=>r.ref)):0;
+  const avg=rows.length?Math.round(rows.reduce((s,r)=>s+r.ref,0)/rows.length):0;
+
+  document.getElementById('sgrid').innerHTML=`
+    <div class="sv"><div class="sn">${rows.length}</div><div class="sl">レース数</div></div>
+    <div class="sv"><div class="sn">${mc}</div><div class="sl">万舟券数</div></div>
+    <div class="sv"><div class="sn">¥${mx.toLocaleString()}</div><div class="sl">最高払戻</div></div>
+    <div class="sv"><div class="sn">¥${avg.toLocaleString()}</div><div class="sl">平均払戻</div></div>`;
+
+  document.getElementById('rarea').innerHTML=`
+    <table class="rt">
+      <thead><tr><th>R</th><th>3連単</th><th>払戻金</th></tr></thead>
+      <tbody>${rows.map(r=>`<tr>
+        <td style="color:#8A9BB5">${r.race}R</td>
+        <td><span class="km">${r.km}</span>${r.ref>=10000?'<span class="mb">万舟🔥</span>':''}</td>
+        <td><span class="${r.ref>=10000?'rm':'rn'}">${r.ref>0?'¥'+r.ref.toLocaleString():'—'}</span></td>
+      </tr>`).join('')}</tbody>
+    </table>`;
+}
+
+buildTabs();
 </script>
 </body>
 </html>
