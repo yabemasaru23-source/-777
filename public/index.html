@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI廣瀬｜ボートレース本日の開催情報</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&family=Oswald:wght@700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Noto Sans JP',sans-serif;background:#0A1628;color:#fff;min-height:100vh;}
+.top-bar{background:linear-gradient(135deg,#0A1628,#162d55);border-bottom:3px solid #D4AF37;padding:1.5rem 1rem;}
+.top-bar-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:1.5rem;flex-wrap:wrap;justify-content:center;text-align:center;}
+.profile-img{width:80px;height:80px;border-radius:50%;border:3px solid #D4AF37;object-fit:cover;}
+.site-title{font-family:'Oswald',sans-serif;font-size:clamp(1.4rem,4vw,2rem);font-weight:700;color:#D4AF37;}
+.site-sub{font-size:.85rem;color:#8A9BB5;margin-top:.3rem;}
+.container{max-width:1000px;margin:0 auto;padding:1.5rem 1rem;}
+.section-title{font-family:'Oswald',sans-serif;font-size:1.3rem;font-weight:700;color:#D4AF37;margin-bottom:1rem;display:flex;align-items:center;gap:.5rem;}
+.card{background:#0F2040;border:1px solid #162d55;border-radius:12px;padding:1.2rem;margin-bottom:1rem;}
+.btn{display:inline-flex;align-items:center;gap:.5rem;background:linear-gradient(135deg,#D4AF37,#B8960F);color:#0A1628;font-weight:700;font-size:.9rem;padding:.7rem 1.5rem;border-radius:50px;border:none;cursor:pointer;font-family:'Noto Sans JP',sans-serif;transition:all .3s;width:100%;justify-content:center;margin-bottom:1rem;}
+.btn:hover{transform:translateY(-2px);}
+.btn:disabled{opacity:.6;cursor:not-allowed;transform:none;}
+.btn-ora{background:linear-gradient(135deg,#FF8C00,#FF4500);color:#fff;}
+.venue-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.8rem;margin-bottom:1.5rem;}
+.venue-card{background:#162d55;border:1px solid #1e3a6a;border-radius:10px;padding:.9rem;text-align:center;cursor:pointer;transition:all .3s;}
+.venue-card:hover,.venue-card.active{border-color:#D4AF37;background:#1e3a6a;}
+.venue-name{font-weight:700;font-size:.95rem;}
+.venue-status{font-size:.72rem;color:#8A9BB5;margin-top:.3rem;}
+.result-row{display:flex;align-items:center;justify-content:space-between;padding:.7rem 0;border-bottom:1px solid #162d55;flex-wrap:wrap;gap:.5rem;}
+.result-row:last-child{border-bottom:none;}
+.race-num{font-size:.8rem;color:#8A9BB5;width:40px;}
+.kaimoku{font-family:'Oswald',sans-serif;font-size:1.2rem;font-weight:700;color:#D4AF37;letter-spacing:1px;}
+.refund{font-size:.95rem;font-weight:700;}
+.refund.man{color:#FF8C00;}
+.refund.normal{color:#2DC653;}
+.loading{text-align:center;padding:2rem;color:#8A9BB5;font-size:.9rem;}
+.error{text-align:center;padding:1.5rem;color:#E63946;font-size:.85rem;}
+.date-badge{display:inline-block;background:rgba(212,175,55,.15);border:1px solid rgba(212,175,55,.4);color:#D4AF37;font-size:.78rem;font-weight:700;padding:.3rem .8rem;border-radius:20px;margin-bottom:1rem;}
+.stat-row{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:1rem;}
+.stat{background:#162d55;border-radius:10px;padding:.8rem 1.2rem;text-align:center;flex:1;min-width:100px;}
+.stat-num{font-family:'Oswald',sans-serif;font-size:1.6rem;font-weight:700;color:#D4AF37;}
+.stat-label{font-size:.72rem;color:#8A9BB5;margin-top:.2rem;}
+</style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <img src="https://masahiko.site/hirose1.jpg" alt="廣瀬雅彦" class="profile-img">
+    <div>
+      <div style="font-size:.75rem;font-weight:700;letter-spacing:2px;color:#D4AF37;margin-bottom:.3rem">AI HIROSE PRESENTS</div>
+      <div class="site-title">廣瀬雅彦<br>人生勝ち道方程式サイト！</div>
+      <div class="site-sub">ボートレース公式データをリアルタイムで取得・表示</div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- 本日の開催場 -->
+  <div class="card">
+    <div class="section-title">🏟️ 本日の開催場</div>
+    <div id="date-badge" class="date-badge">読み込み中...</div>
+    <button class="btn" id="load-venues-btn" onclick="loadVenues()">
+      🔄 本日の開催場を取得する
+    </button>
+    <div id="venues-area" class="loading" style="display:none">取得中...</div>
+    <div class="venue-grid" id="venue-grid"></div>
+  </div>
+
+  <!-- レース結果 -->
+  <div class="card" id="results-card" style="display:none">
+    <div class="section-title">🏆 <span id="results-title">レース結果</span></div>
+    <div class="stat-row" id="stats-row"></div>
+    <div id="results-area"></div>
+  </div>
+
+</div>
+
+<script>
+const today = new Date();
+const yyyy = today.getFullYear();
+const mm = String(today.getMonth()+1).padStart(2,'0');
+const dd = String(today.getDate()).padStart(2,'0');
+const dateStr = `${yyyy}${mm}${dd}`;
+document.getElementById('date-badge').textContent = `${yyyy}年${mm}月${dd}日 の開催情報`;
+
+async function loadVenues(){
+  const btn = document.getElementById('load-venues-btn');
+  const area = document.getElementById('venues-area');
+  btn.disabled = true;
+  btn.textContent = '取得中...';
+  area.style.display = 'block';
+  area.textContent = 'ボートレース公式サイトから開催場を取得中...';
+
+  try {
+    const res = await fetch(`/api/races?hd=${dateStr}`);
+    const data = await res.json();
+
+    if(data.error) throw new Error(data.error);
+
+    area.style.display = 'none';
+    const grid = document.getElementById('venue-grid');
+
+    if(data.venues.length === 0){
+      grid.innerHTML = '<p style="color:#8A9BB5;font-size:.85rem">本日の開催場が見つかりませんでした。</p>';
+    } else {
+      grid.innerHTML = data.venues.map(v => `
+        <div class="venue-card" onclick="loadResults('${v.code}','${v.name}')">
+          <div style="font-size:1.4rem;margin-bottom:.3rem">⛵</div>
+          <div class="venue-name">${v.name}</div>
+          <div class="venue-status">タップで結果を見る</div>
+        </div>
+      `).join('');
+    }
+
+    btn.textContent = '🔄 再取得する';
+    btn.disabled = false;
+
+  } catch(e) {
+    area.textContent = 'エラー: ' + e.message;
+    area.style.color = '#E63946';
+    btn.textContent = '🔄 再試行する';
+    btn.disabled = false;
+  }
+}
+
+async function loadResults(jcd, name){
+  document.querySelectorAll('.venue-card').forEach(c => c.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+
+  const card = document.getElementById('results-card');
+  const area = document.getElementById('results-area');
+  const title = document.getElementById('results-title');
+  const statsRow = document.getElementById('stats-row');
+
+  card.style.display = 'block';
+  title.textContent = `${name} の結果`;
+  area.innerHTML = '<div class="loading">結果を取得中...</div>';
+  statsRow.innerHTML = '';
+  card.scrollIntoView({behavior:'smooth'});
+
+  try {
+    const res = await fetch(`/api/results?jcd=${jcd}&hd=${dateStr}`);
+    const data = await res.json();
+
+    if(data.error) throw new Error(data.error);
+
+    const results = data.results;
+    if(results.length === 0){
+      area.innerHTML = '<div class="loading">まだ結果がありません（レース進行中）</div>';
+      return;
+    }
+
+    const manCount = results.filter(r => r.refund >= 10000).length;
+    const maxRefund = Math.max(...results.map(r => r.refund));
+    const avgRefund = Math.round(results.reduce((s,r) => s+r.refund, 0) / results.length);
+
+    statsRow.innerHTML = `
+      <div class="stat"><div class="stat-num">${results.length}</div><div class="stat-label">結果取得R数</div></div>
+      <div class="stat"><div class="stat-num">${manCount}</div><div class="stat-label">万舟券数</div></div>
+      <div class="stat"><div class="stat-num">¥${maxRefund.toLocaleString()}</div><div class="stat-label">最高払戻</div></div>
+      <div class="stat"><div class="stat-num">¥${avgRefund.toLocaleString()}</div><div class="stat-label">平均払戻</div></div>
+    `;
+
+    area.innerHTML = results.map(r => `
+      <div class="result-row">
+        <span class="race-num">${r.race}R</span>
+        <span class="kaimoku">${r.kaimoku}</span>
+        <span class="refund ${r.refund >= 10000 ? 'man' : 'normal'}">
+          ${r.refund >= 10000 ? '🔥 ' : ''}¥${r.refund.toLocaleString()}
+        </span>
+      </div>
+    `).join('');
+
+  } catch(e) {
+    area.innerHTML = `<div class="error">エラー: ${e.message}</div>`;
+  }
+}
+
+// 自動で開催場を取得
+window.onload = () => loadVenues();
+</script>
+</body>
+</html>
